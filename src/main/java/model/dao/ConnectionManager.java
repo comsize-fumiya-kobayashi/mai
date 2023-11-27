@@ -8,7 +8,7 @@ public class ConnectionManager {
 	/**
 	 * データベースURL
 	 */
-	private final static String URL = "jdbc:mysql://localhost:3306/itemdb?useSSL=false";
+	private final static String URL = "jdbc:mysql://localhost:3306/task_db?useSSL=false";
 
 	/**
 	 * ユーザ
@@ -32,7 +32,5 @@ public class ConnectionManager {
 		// JDBCドライバの読み込み
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		return DriverManager.getConnection(URL, USER, PASSWORD);
-
 	}
-
 }
