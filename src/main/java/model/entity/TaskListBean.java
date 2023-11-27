@@ -2,91 +2,91 @@ package model.entity;
 
 public class TaskListBean {
 	
-	private int tase_id;
-	private String task_name;
-	private int category_id;
-	private String category_name;
-	private int limit_date;
-	private int user_id;
-	private String user_name;
-	private int status_code;
-	private String status_name;
+	private int taskId;
+	private String taskName;
+	private int categoryId;
+	private String categoryName;
+	private int limitDate;
+	private int userId;
+	private String userName;
+	private int statusCode;
+	private String statusName;
 	private String memo;
 	
 	public TaskListBean() {
 		super();
 	}
 
-	public int getTase_id() {
-		return tase_id;
+	public int getTaskId() {
+		return taskId;
 	}
 
-	public void setTase_id(int tase_id) {
-		this.tase_id = tase_id;
+	public void setTaskId(int taskId) {
+		this.taskId = taskId;
 	}
 
-	public String getTask_name() {
-		return task_name;
+	public String getTaskName() {
+		return taskName;
 	}
 
-	public void setTask_name(String task_name) {
-		this.task_name = task_name;
+	public void setTaskName(String taskName) {
+		this.taskName = taskName;
 	}
 
-	public int getCategory_id() {
-		return category_id;
+	public int getCategoryId() {
+		return categoryId;
 	}
 
-	public void setCategory_id(int category_id) {
-		this.category_id = category_id;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
 
-	public String getCategory_name() {
-		return category_name;
+	public String getCategoryName() {
+		return categoryName;
 	}
 
-	public void setCategory_name(String category_name) {
-		this.category_name = category_name;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
-	public int getLimit_date() {
-		return limit_date;
+	public int getLimitDate() {
+		return limitDate;
 	}
 
-	public void setLimit_date(int limit_date) {
-		this.limit_date = limit_date;
+	public void setLimitDate(int limitDate) {
+		this.limitDate = limitDate;
 	}
 
-	public int getUser_id() {
-		return user_id;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
-	public String getUser_name() {
-		return user_name;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public int getStatus_code() {
-		return status_code;
+	public int getStatusCode() {
+		return statusCode;
 	}
 
-	public void setStatus_code(int status_code) {
-		this.status_code = status_code;
+	public void setStatusCode(int statusCode) {
+		this.statusCode = statusCode;
 	}
 
-	public String getStatus_name() {
-		return status_name;
+	public String getStatusName() {
+		return statusName;
 	}
 
-	public void setStatus_name(String status_name) {
-		this.status_name = status_name;
+	public void setStatusName(String statusName) {
+		this.statusName = statusName;
 	}
 
 	public String getMemo() {
@@ -96,5 +96,5 @@ public class TaskListBean {
 	public void setMemo(String memo) {
 		this.memo = memo;
 	}
-	
+
 }
