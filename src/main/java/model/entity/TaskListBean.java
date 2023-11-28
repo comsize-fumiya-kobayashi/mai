@@ -7,7 +7,7 @@ public class TaskListBean {
 	private int categoryId;
 	private String categoryName;
 	private int limitDate;
-	private int userId;
+	private String userId;
 	private String userName;
 	private int statusCode;
 	private String statusName;
@@ -57,11 +57,11 @@ public class TaskListBean {
 		this.limitDate = limitDate;
 	}
 
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
