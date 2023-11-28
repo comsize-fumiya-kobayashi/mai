@@ -57,7 +57,7 @@ public class TaskAddServlet extends HttpServlet {
 		session.setAttribute("statusList", statusList);
 
 		// 商品登録画面への転送
-		RequestDispatcher rd = request.getRequestDispatcher("item-register.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("task-register.jsp");
 		rd.forward(request, response);
 	}
 	
