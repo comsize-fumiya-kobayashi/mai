@@ -11,11 +11,11 @@
 	<hr>
 	ログインユーザ：<%= session.getAttribute("userName") %>さん
 	<br>
-	<form action="task-register.jsp">
+	<form action="task-register.jsp" method="GET">
 		<input type="submit" value="タスク登録画面へ">
 	</form>
 	<br>
-	<form action="task-list-servlet">
+	<form action="task-list-servlet" method="GET">
 		<input type="submit" value="タスク一覧表示画面へ">
 	</form>
 	<br>

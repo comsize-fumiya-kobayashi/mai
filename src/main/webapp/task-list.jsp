@@ -26,7 +26,8 @@
 		for (TaskListBean task : taskList) {
 		%>
 		<tr>
-			<td><%=task.getTaskName()%></td>
+			<td>
+			<a href="ItemDetailServlet?task_name=<%=task.getTaskName()%>"><%=task.getTaskName()%></td>
 			<td><%=task.getCategoryName()%></td>
 			<td><%=task.getLimitDate()%></td>
 			<td><%=task.getUserName()%></td>
