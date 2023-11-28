@@ -96,7 +96,7 @@ public class TaskAddServlet extends HttpServlet {
 
 				String url = "";// 転送先
 				// 遷移先画面の分岐
-				if (processingNumber != 0) {
+				if (processingNumber > 0) {
 					url = "register-success.jsp";// 登録成功画面
 				} else {
 					url = "register-failure.jsp";// 登録失敗画面

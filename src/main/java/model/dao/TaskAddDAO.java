@@ -15,21 +15,22 @@ import model.entity.UserBean;
 
 public class TaskAddDAO {
 	
-	public int insertTask(TaskListBean itemInfo)
+	public int insertTask(TaskListBean taskInfo)
 			throws SQLException, ClassNotFoundException {
 
 		int processingNumber = 0; //処理件数
+		
 		String sql = "INSERT INTO t_task(task_name,category_id,limit_date,user_id,status_code,memo)VALUES(?,?,?,?,?,?)";
 		
 		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
-			pstmt.setString(1, itemInfo.getTaskName());
-			pstmt.setInt(2, itemInfo.getCategoryId());
-			pstmt.setDate(3, itemInfo.getLimitDate());
-			pstmt.setString(4, itemInfo.getUserId());
-			pstmt.setInt(5, itemInfo.getStatusCode());
-			pstmt.setString(1, itemInfo.getMemo());
+			pstmt.setString(1, taskInfo.getTaskName());
+			pstmt.setInt(2, taskInfo.getCategoryId());
+			pstmt.setDate(3, taskInfo.getLimitDate());
+			pstmt.setString(4, taskInfo.getUserId());
+			pstmt.setInt(5, taskInfo.getStatusCode());
+			pstmt.setString(6, taskInfo.getMemo());
 			processingNumber = pstmt.executeUpdate();
 		}
 		return processingNumber;
