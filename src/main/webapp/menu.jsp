@@ -11,7 +11,7 @@
 	<hr>
 	ログインユーザ：<%= session.getAttribute("userName") %>さん
 	<br>
-	<form action="task-register.jsp" method="GET">
+	<form action="task-add-servlet" method="GET">
 		<input type="submit" value="タスク登録画面へ">
 	</form>
 	<br>
@@ -19,7 +19,7 @@
 		<input type="submit" value="タスク一覧表示画面へ">
 	</form>
 	<br>
-	<form action="logout.jsp">
+	<form action="logout.jsp" method="POST">
 		<input type="submit" value="ログアウト">
 	</form>
 </body>
