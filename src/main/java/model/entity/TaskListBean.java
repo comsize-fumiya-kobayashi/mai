@@ -12,7 +12,7 @@ public class TaskListBean {
 	private Date limitDate;
 	private String userId;
 	private String userName;
-	private int statusCode;
+	private String statusCode;
 	private String statusName;
 	private String memo;
 	private Timestamp createDatetime;
@@ -78,11 +78,11 @@ public class TaskListBean {
 		this.userName = userName;
 	}
 
-	public int getStatusCode() {
+	public String getStatusCode() {
 		return statusCode;
 	}
 
-	public void setStatusCode(int statusCode) {
+	public void setStatusCode(String statusCode) {
 		this.statusCode = statusCode;
 	}
 

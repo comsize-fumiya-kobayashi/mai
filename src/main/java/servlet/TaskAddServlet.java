@@ -83,7 +83,7 @@ public class TaskAddServlet extends HttpServlet {
 				tasklist.setCategoryId(Integer.parseInt(request.getParameter("category_name")));
 				tasklist.setLimitDate(Date.valueOf(request.getParameter("date")));
 				tasklist.setUserId(request.getParameter("user_name"));
-				tasklist.setStatusCode(Integer.parseInt(request.getParameter("status_name")));
+				tasklist.setStatusCode(request.getParameter("status_name"));
 				tasklist.setMemo(request.getParameter("memo"));
 
 				int processingNumber = 0;// 処理件数

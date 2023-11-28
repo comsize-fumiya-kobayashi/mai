@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class StatusBean {
 	
-	private int statusCode;
+	private String statusCode;
 	private String statusName;
 	private Timestamp updateDatetme;
 	
@@ -12,11 +12,11 @@ public class StatusBean {
 		super();
 	}
 
-	public int getStatusCode() {
+	public String getStatusCode() {
 		return statusCode;
 	}
 
-	public void setStatusCode(int statusCode) {
+	public void setStatusCode(String statusCode) {
 		this.statusCode = statusCode;
 	}
 

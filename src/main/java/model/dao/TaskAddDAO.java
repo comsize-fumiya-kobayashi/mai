@@ -29,7 +29,7 @@ public class TaskAddDAO {
 			pstmt.setInt(2, taskInfo.getCategoryId());
 			pstmt.setDate(3, taskInfo.getLimitDate());
 			pstmt.setString(4, taskInfo.getUserId());
-			pstmt.setInt(5, taskInfo.getStatusCode());
+			pstmt.setString(5, taskInfo.getStatusCode());
 			pstmt.setString(6, taskInfo.getMemo());
 			processingNumber = pstmt.executeUpdate();
 		}
@@ -66,7 +66,7 @@ public class TaskAddDAO {
 				ResultSet res = stmt.executeQuery("SELECT * FROM m_status")) {
 			// 結果の操作
 			while (res.next()) {
-				int statusCode = res.getInt("status_code");
+				String statusCode = res.getString("status_code");
 				String statusName = res.getString("status_name");
 				StatusBean status = new StatusBean();
 				status.setStatusCode(statusCode);
