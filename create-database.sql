@@ -91,6 +91,8 @@ INSERT INTO task_db.m_category (category_name) VALUES ('既存商品B:改良プ�
 
 /*ユーザマスタ INSERT*/
 INSERT INTO task_db.m_user(user_id, password, user_name) VALUES ('admin', 'admin', '山田');
+INSERT INTO task_db.m_user(user_id, password, user_name) VALUES ('test1', 'test1', 'テスト1');
+INSERT INTO task_db.m_user(user_id, password, user_name) VALUES ('test2', 'test2', 'テスト2');
 
 /*INSERT INTO task_db.m_user(user_id, password, user_name) VALUES ('', '', '');*/
 

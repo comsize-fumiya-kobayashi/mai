@@ -17,6 +17,7 @@ import model.dao.TaskAddDAO;
 import model.entity.CategoryBean;
 import model.entity.StatusBean;
 import model.entity.TaskListBean;
+import model.entity.UserBean;
 
 /**
  * Servlet implementation class TaskAddServlet
@@ -40,12 +41,14 @@ public class TaskAddServlet extends HttpServlet {
 
 		List<CategoryBean> categoryList = null;
 		List<StatusBean> statusList = null;
+		List<UserBean> userList = null;
 
 		TaskAddDAO dao = new TaskAddDAO();
 		try {
 			// プルダウン用のカテゴリ一覧を取得
 			categoryList = dao.selectCategory();
 			statusList = dao.selectStatus();
+			userList = dao.selectUser();
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -55,6 +58,7 @@ public class TaskAddServlet extends HttpServlet {
 		// リクエストスコープへの属性の設定
 		session.setAttribute("categoryList", categoryList);
 		session.setAttribute("statusList", statusList);
+		session.setAttribute("userList", userList);
 
 		// 商品登録画面への転送
 		RequestDispatcher rd = request.getRequestDispatcher("task-register.jsp");
@@ -78,8 +82,8 @@ public class TaskAddServlet extends HttpServlet {
 				tasklist.setTaskName(request.getParameter("task_name"));
 				tasklist.setCategoryId(Integer.parseInt(request.getParameter("category_name")));
 				tasklist.setLimitDate(Date.valueOf(request.getParameter("date")));
-				tasklist.setUserName(request.getParameter("user_name"));
-				tasklist.setStatusCode(Integer.parseInt(request.getParameter("status_name")));
+				tasklist.setUserId(request.getParameter("user_name"));
+				tasklist.setStatusCode(request.getParameter("status_name"));
 				tasklist.setMemo(request.getParameter("memo"));
 
 				int processingNumber = 0;// 処理件数
