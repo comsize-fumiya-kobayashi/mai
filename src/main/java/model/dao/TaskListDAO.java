@@ -1,6 +1,7 @@
 package model.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -31,7 +32,7 @@ public class TaskListDAO {
 			while (res.next()) {
 				String taskName = res.getString("task_name");
 				String categoryName = res.getString("category_name");
-				int limitDate = res.getInt("limit_date");
+				Date limitDate = res.getDate("limit_date");
 				String userName = res.getString("user_name");
 				String statusName = res.getString("status_name");
 				String memo = res.getString("memo");

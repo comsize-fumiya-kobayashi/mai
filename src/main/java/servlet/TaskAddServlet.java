@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -73,10 +74,10 @@ public class TaskAddServlet extends HttpServlet {
 				// Beanのインスタンス化
 				TaskListBean tasklist = new TaskListBean();
 
-				// 入力されたカテゴリコード、商品名、価格をbeanにセット
+				// 入力された情報をbeanにセット
 				tasklist.setTaskName(request.getParameter("task_name"));
 				tasklist.setCategoryId(Integer.parseInt(request.getParameter("category_name")));
-				tasklist.setLimitDate(Integer.parseInt(request.getParameter("date")));
+				tasklist.setLimitDate(Date.valueOf(request.getParameter("date")));
 				tasklist.setUserName(request.getParameter("user_name"));
 				tasklist.setStatusCode(Integer.parseInt(request.getParameter("status_name")));
 				tasklist.setMemo(request.getParameter("memo"));

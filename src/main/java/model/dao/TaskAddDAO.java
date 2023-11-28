@@ -25,7 +25,7 @@ public class TaskAddDAO {
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
 			pstmt.setString(1, itemInfo.getTaskName());
 			pstmt.setInt(2, itemInfo.getCategoryId());
-			pstmt.setInt(3, itemInfo.getLimitDate());
+			pstmt.setDate(3, itemInfo.getLimitDate());
 			pstmt.setString(4, itemInfo.getUserId());
 			pstmt.setInt(5, itemInfo.getStatusCode());
 			pstmt.setString(1, itemInfo.getMemo());
