@@ -1,9 +1,12 @@
 package model.entity;
 
+import java.sql.Timestamp;
+
 public class CategoryBean {
 	
 	private int categoryId;
 	private String categoryName;
+	private Timestamp updateDatetime;
 	
 	public CategoryBean() {
 		super();
@@ -23,6 +26,14 @@ public class CategoryBean {
 
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
+	}
+
+	public Timestamp getUpdateDatetime() {
+		return updateDatetime;
+	}
+
+	public void setUpdateDatetime(Timestamp updateDatetime) {
+		this.updateDatetime = updateDatetime;
 	}
 	
 }

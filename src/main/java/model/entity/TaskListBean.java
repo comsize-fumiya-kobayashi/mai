@@ -1,6 +1,7 @@
 package model.entity;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class TaskListBean {
 	
@@ -14,6 +15,8 @@ public class TaskListBean {
 	private int statusCode;
 	private String statusName;
 	private String memo;
+	private Timestamp createDatetime;
+	private Timestamp updateDatetime;
 	
 	public TaskListBean() {
 		super();
@@ -99,4 +102,20 @@ public class TaskListBean {
 		this.memo = memo;
 	}
 
+	public Timestamp getCreateDatetime() {
+		return createDatetime;
+	}
+
+	public void setCreateDatetime(Timestamp createDatetime) {
+		this.createDatetime = createDatetime;
+	}
+
+	public Timestamp getUpdateDatetime() {
+		return updateDatetime;
+	}
+
+	public void setUpdateDatetime(Timestamp updateDatetime) {
+		this.updateDatetime = updateDatetime;
+	}
+	
 }

@@ -1,9 +1,12 @@
 package model.entity;
 
+import java.sql.Timestamp;
+
 public class StatusBean {
 	
 	private int statusCode;
 	private String statusName;
+	private Timestamp updateDatetme;
 	
 	public StatusBean() {
 		super();
@@ -23,6 +26,14 @@ public class StatusBean {
 
 	public void setStatusName(String statusName) {
 		this.statusName = statusName;
+	}
+
+	public Timestamp getUpdateDatetme() {
+		return updateDatetme;
+	}
+
+	public void setUpdateDatetme(Timestamp updateDatetme) {
+		this.updateDatetme = updateDatetme;
 	}
 	
 }
