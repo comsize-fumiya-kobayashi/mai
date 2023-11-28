@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.List,model.entity.CategoryBean" import="java.util.List,model.entity.StatusBean"%>
+    pageEncoding="UTF-8" import="java.util.List,model.entity.CategoryBean" import="java.util.List,model.entity.StatusBean" import="java.util.List,model.entity.UserBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +10,7 @@
 	<%
 	List<CategoryBean> categoryList = (List<CategoryBean>) session.getAttribute("categoryList");
 	List<StatusBean> statusList = (List<StatusBean>) session.getAttribute("statusList");
+	List<UserBean> userList = (List<UserBean>) session.getAttribute("userList");
 	%>
 	<h1>タスク登録画面</h1>
 	<hr>
@@ -23,13 +24,13 @@
 				<th>カテゴリ情報</th>
 				<td><select name="category_name">
 				<%
-						for (CategoryBean category : categoryList) {
-						%>
-						<option value="<%=category.getCategoryId()%>"><%=category.getCategoryName()%></option>
-						<%
-						}
-						%>
-						</select></td>
+					for (CategoryBean category : categoryList) {
+					%>
+					<option value="<%=category.getCategoryId()%>"><%=category.getCategoryName()%></option>
+					<%
+					}
+					%>
+					</select></td>
 			</tr>
 			<tr>
 				<th>期限</th>
@@ -37,7 +38,15 @@
 			</tr>
 			<tr>
 				<th>担当者情報</th>
-				<td><input type="text" name="user_name"></td>
+				<td><select name="user_name">
+				<%
+					for (UserBean user : userList) {
+					%>
+					<option value="<%=user.getUserId()%>"><%=user.getUserName()%></option>
+					<%
+					}
+					%>
+					</select></td>
 			</tr>
 			<tr>
 				<th>ステータス情報</th>
