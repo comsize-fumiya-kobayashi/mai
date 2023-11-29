@@ -18,11 +18,11 @@
 		<table border="1">
 			<tr>
 				<th>タスク名</th>
-				<td><input type="text" name="task_name"></td>
+				<td><input type="text" name="task_name" required></td>
 			</tr>
 			<tr>
 				<th>カテゴリ情報</th>
-				<td><select name="category_name">
+				<td><select name="category_id">
 				<%
 					for (CategoryBean category : categoryList) {
 					%>
@@ -34,11 +34,11 @@
 			</tr>
 			<tr>
 				<th>期限</th>
-				<td><input type="date" name="date"></td>
+				<td><input type="date" name="date" value=""></td>
 			</tr>
 			<tr>
 				<th>担当者情報</th>
-				<td><select name="user_name">
+				<td><select name="user_id">
 				<%
 					for (UserBean user : userList) {
 					%>
@@ -50,7 +50,7 @@
 			</tr>
 			<tr>
 				<th>ステータス情報</th>
-				<td><select name="status_name">
+				<td><select name="status_code">
 				<%
 					for (StatusBean status : statusList) {
 					%>

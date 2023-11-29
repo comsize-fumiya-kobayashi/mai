@@ -80,10 +80,10 @@ public class TaskAddServlet extends HttpServlet {
 
 				// 入力された情報をbeanにセット
 				tasklist.setTaskName(request.getParameter("task_name"));
-				tasklist.setCategoryId(Integer.parseInt(request.getParameter("category_name")));
+				tasklist.setCategoryId(Integer.parseInt(request.getParameter("category_id")));
 				tasklist.setLimitDate(Date.valueOf(request.getParameter("date")));
-				tasklist.setUserId(request.getParameter("user_name"));
-				tasklist.setStatusCode(request.getParameter("status_name"));
+				tasklist.setUserId(request.getParameter("user_id"));
+				tasklist.setStatusCode(request.getParameter("status_code"));
 				tasklist.setMemo(request.getParameter("memo"));
 
 				int processingNumber = 0;// 処理件数
