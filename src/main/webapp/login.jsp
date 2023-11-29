@@ -30,11 +30,11 @@ th {
 	<table>
 		<tr>
 			<th>ユーザID:</th>
-			<td><input type="text" name="userId"></td>
+			<td><input type="text" name="user_id" required="required"></td>
 		</tr>
 		<tr>
 			<th>パスワード:</th>
-			<td><input type="password" name="password"></td>
+			<td><input type="password" name="password" required="required"></td>
 		</tr>
 	</table>
 	<input type="submit" value="ログイン">
