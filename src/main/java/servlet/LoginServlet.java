@@ -45,7 +45,7 @@ public class LoginServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		// 入力フォームのパラメータ値を代入
-		String userId = request.getParameter("userId");
+		String userId = request.getParameter("user_id");
 		String password = request.getParameter("password");
 		
 		// セッション
