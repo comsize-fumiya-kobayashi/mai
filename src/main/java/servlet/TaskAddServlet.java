@@ -25,19 +25,20 @@ import model.entity.UserBean;
 @WebServlet("/task-add-servlet")
 public class TaskAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public TaskAddServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public TaskAddServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		List<CategoryBean> categoryList = null;
 		List<StatusBean> statusList = null;
@@ -52,9 +53,9 @@ public class TaskAddServlet extends HttpServlet {
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+
 		HttpSession session = request.getSession();
-		
+
 		// リクエストスコープへの属性の設定
 		session.setAttribute("categoryList", categoryList);
 		session.setAttribute("statusList", statusList);
@@ -64,45 +65,48 @@ public class TaskAddServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("task-register.jsp");
 		rd.forward(request, response);
 	}
-	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-				// リクエストのエンコーディング方式を指定
-				request.setCharacterEncoding("UTF-8");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-				// DAOのインスタンス化
-				TaskAddDAO dao = new TaskAddDAO();
-				// Beanのインスタンス化
-				TaskListBean tasklist = new TaskListBean();
+		// リクエストのエンコーディング方式を指定
+		request.setCharacterEncoding("UTF-8");
 
-				// 入力された情報をbeanにセット
-				tasklist.setTaskName(request.getParameter("task_name"));
-				tasklist.setCategoryId(Integer.parseInt(request.getParameter("category_id")));
-				tasklist.setLimitDate(Date.valueOf(request.getParameter("date")));
-				tasklist.setUserId(request.getParameter("user_id"));
-				tasklist.setStatusCode(request.getParameter("status_code"));
-				tasklist.setMemo(request.getParameter("memo"));
+		// DAOのインスタンス化
+		TaskAddDAO dao = new TaskAddDAO();
+		// Beanのインスタンス化
+		TaskListBean tasklist = new TaskListBean();
 
-				int processingNumber = 0;// 処理件数
+		// 入力された情報をbeanにセット
+		tasklist.setTaskName(request.getParameter("task_name"));
+		tasklist.setCategoryId(Integer.parseInt(request.getParameter("category_id")));
+		if(!request.getParameter("date").isEmpty()) {
+			tasklist.setLimitDate(Date.valueOf(request.getParameter("date")));
+		}
+		tasklist.setUserId(request.getParameter("user_id"));
+		tasklist.setStatusCode(request.getParameter("status_code"));
+		tasklist.setMemo(request.getParameter("memo"));
 
-				try {
-					processingNumber = dao.insertTask(tasklist);// 登録処理
-				} catch (SQLException | ClassNotFoundException e) {
-					e.printStackTrace();
-				}
+		int processingNumber = 0;// 処理件数
 
-				String url = "";// 転送先
-				// 遷移先画面の分岐
-				if (processingNumber > 0) {
-					url = "register-success.jsp";// 登録成功画面
-				} else {
-					url = "register-failure.jsp";// 登録失敗画面
-				}
-				// 画面遷移
-				RequestDispatcher rd = request.getRequestDispatcher(url);
-				rd.forward(request, response);
-			}
+		try {
+			processingNumber = dao.insertTask(tasklist);// 登録処理
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		String url = "";// 転送先
+		// 遷移先画面の分岐
+		if (processingNumber > 0) {
+			url = "register-success.jsp";// 登録成功画面
+		} else {
+			url = "register-failure.jsp";// 登録失敗画面
+		}
+		// 画面遷移
+		RequestDispatcher rd = request.getRequestDispatcher(url);
+		rd.forward(request, response);
+	}
 }
