@@ -97,9 +97,9 @@ INSERT INTO task_db.m_user(user_id, password, user_name) VALUES ('test2', 'test2
 /*INSERT INTO task_db.m_user(user_id, password, user_name) VALUES ('', '', '');*/
 
 /*タスクテーブル INSERT*/
-INSERT INTO task_db.t_task(task_name, category_id, start_date, limit_date, user_id, status_code, memo) VALUES ('未着手サンプルタスク', 1, '2023-09-01', '2023-09-11', 'admin', '00', 'サンプルメモ');
-INSERT INTO task_db.t_task(task_name, category_id, start_date, user_id, status_code) VALUES ('サンプルタスク2', 2, '2023-08-01','admin', '99');
-INSERT INTO task_db.t_task(task_name, category_id, start_date, limit_date, user_id, status_code, memo) VALUES ('着手中サンプルタスク', 1, '2023-08-01', '2023-08-31', 'admin', '50', 'サンプルメモ');
+INSERT INTO task_db.t_task(task_name, category_id, start_date, user_id, status_code, memo) VALUES ('未着手サンプルタスク', 1, '2023-11-01', 'admin', '00', 'サンプルメモ');
+INSERT INTO task_db.t_task(task_name, category_id, start_date, limit_date, user_id, status_code, memo) VALUES ('着手サンプルタスク', 1, '2023-11-01', '2023-12-31', 'admin', '50', 'サンプルメモ');
+INSERT INTO task_db.t_task(task_name, category_id, start_date, limit_date, user_id, status_code, memo) VALUES ('完了サンプルタスク', 1, '2023-11-01', '2023-11-30', 'admin', '99', '');
 
 /*コメントテーブル INSERT*/
 INSERT INTO task_db.t_comment(task_id, user_id, comment) VALUES (2,'admin','コメント');
