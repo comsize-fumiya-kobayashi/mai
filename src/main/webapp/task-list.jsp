@@ -39,12 +39,12 @@
 			<td><%=task.getStatusName()%></td>
 			<td><%=task.getMemo()%></td>
 			<td>
-			<form action="menu.jsp" method="POST">
+			<form action="task-update-servlet" method="GET">
 			<input type="submit" value="編集">
 			</form>
 			</td>
 			<td>
-			<form action="menu.jsp" method="POST">
+			<form action="DeleteConfirm.jsp" method="POST">
 			<input type="submit" value="削除">
 			</form>
 			</td>
