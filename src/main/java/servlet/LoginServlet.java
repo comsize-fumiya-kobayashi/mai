@@ -15,6 +15,7 @@ import model.dao.UserDAO;
 
 /**
  * Servlet implementation class LoginServlet
+ * @author 村田
  */
 @WebServlet("/login-servlet")
 public class LoginServlet extends HttpServlet {

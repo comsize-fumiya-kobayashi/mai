@@ -1,5 +1,9 @@
 package model.entity;
 
+/**
+ * ユーザBeanクラス
+ * @author 村田
+ */
 public class UserBean {
 
 	/** ユーザID */

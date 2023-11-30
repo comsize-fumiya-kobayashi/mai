@@ -5,7 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/** ユーザマスタDAOクラス */
+/**
+ * ユーザマスタDAOクラス
+ * @author 村田
+ */
 public class UserDAO {
 
 	/**
