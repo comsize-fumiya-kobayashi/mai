@@ -17,7 +17,7 @@ public class UpdateDAO {
 	public UpdateBean selectTask()
 			throws SQLException, ClassNotFoundException {
 
-		String sql = "SELECT task_name FROM t_task Where task_id = ?";
+		String sql = "SELECT task_name FROM t_task WHERE t1.task_name;";
 
 		UpdateBean tName = new UpdateBean();
 		try (Connection con = ConnectionManager.getConnection();
@@ -70,6 +70,7 @@ public class UpdateDAO {
 			while (res.next()) {
 				int categoryId = res.getInt("category_id");
 				String categoryName = res.getString("category_name");
+				
 				CategoryBean category = new CategoryBean();
 				category.setCategoryId(categoryId);
 				category.setCategoryName(categoryName);
@@ -90,6 +91,7 @@ public class UpdateDAO {
 			while (res.next()) {
 				String statusCode = res.getString("status_code");
 				String statusName = res.getString("status_name");
+				
 				StatusBean status = new StatusBean();
 				status.setStatusCode(statusCode);
 				status.setStatusName(statusName);

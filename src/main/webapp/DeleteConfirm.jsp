@@ -5,16 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>商品情報-削除確認画面</title>
+<title>タスク削除確認画面</title>
 </head>
 <body>
 	<%
 		UpdateBean updateDetail = (UpdateBean) session.getAttribute("updateDetail");
 	%>
 
-	<h1>商品情報-削除確認画面</h1>
+	<h1>タスク削除確認画面</h1>
 	<hr>
-	<h2>商品情報を削除します。よろしいですか？</h2>
+	<h2>タスクを削除します。よろしいですか？</h2>
 	<br>
 		<table border="1">
 			
