@@ -78,22 +78,23 @@ public class TaskAddServlet extends HttpServlet {
 		// DAOのインスタンス化
 		TaskAddDAO dao = new TaskAddDAO();
 		// Beanのインスタンス化
-		TaskListBean tasklist = new TaskListBean();
+		TaskListBean taskList = new TaskListBean();
 
 		// 入力された情報をbeanにセット
-		tasklist.setTaskName(request.getParameter("task_name"));
-		tasklist.setCategoryId(Integer.parseInt(request.getParameter("category_id")));
+		
+		taskList.setTaskName(request.getParameter("task_name"));
+		taskList.setCategoryId(Integer.parseInt(request.getParameter("category_id")));
 		if(!request.getParameter("date").isEmpty()) {
-			tasklist.setLimitDate(Date.valueOf(request.getParameter("date")));
+			taskList.setLimitDate(Date.valueOf(request.getParameter("date")));
 		}
-		tasklist.setUserId(request.getParameter("user_id"));
-		tasklist.setStatusCode(request.getParameter("status_code"));
-		tasklist.setMemo(request.getParameter("memo"));
-
+		taskList.setUserId(request.getParameter("user_id"));
+		taskList.setStatusCode(request.getParameter("status_code"));
+		taskList.setMemo(request.getParameter("memo"));
+		
 		int processingNumber = 0;// 処理件数
 
 		try {
-			processingNumber = dao.insertTask(tasklist);// 登録処理
+			processingNumber = dao.insertTask(taskList);// 登録処理
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}

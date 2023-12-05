@@ -46,7 +46,8 @@
 			<td><%=task.getMemo()%></td>
 			<td>
 			<form action="task-update-servlet" method="GET">
-			<input type="submit" value="編集">
+				<input type = "hidden" value="<%=task.getTaskId() %>" name="task_id">
+				<input type="submit" value="編集">
 			</form>
 			</td>
 			<td>

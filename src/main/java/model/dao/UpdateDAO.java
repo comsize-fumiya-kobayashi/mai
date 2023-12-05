@@ -14,22 +14,34 @@ import model.entity.UpdateBean;
 import model.entity.UserBean;
 
 public class UpdateDAO {
-	public UpdateBean selectTask()
+	public UpdateBean selectTask(int taskId)
 			throws SQLException, ClassNotFoundException {
 
-		String sql = "SELECT task_name FROM t_task WHERE t1.task_name;";
+		String sql = "SELECT t1.task_id, t1.task_name,t1.category_id,t1.user_id,t1.status_code, t2.category_name, t1.limit_date, t3.user_name, t4.status_name, t1.memo "
+				+ "FROM t_task t1 "
+				+ "LEFT JOIN m_category t2 ON t1.category_id = t2.category_id "
+				+ "LEFT JOIN m_user t3 ON t1.user_id = t3.user_id "
+				+ "LEFT JOIN m_status t4 ON t1.status_code = t4.status_code WHERE t1.task_id =?;";
 
 		UpdateBean tName = new UpdateBean();
 		try (Connection con = ConnectionManager.getConnection();
-				Statement stmt = con.createStatement();
-				ResultSet res = stmt.executeQuery(sql)) {
+				PreparedStatement pstmt = con.prepareStatement(sql)){
+				
+				pstmt.setInt(1,taskId);
+				ResultSet res = pstmt.executeQuery();
 
 			// 結果の操作
 			while (res.next()) {
-
-				String taskName = res.getString("task_name");
-
-				tName.setTaskName(taskName);
+				tName.setTaskId(res.getInt("task_id"));
+				tName.setTaskName(res.getString("task_name"));
+				tName.setCategoryId(res.getInt("category_id"));
+				tName.setCategoryName(res.getString("category_name"));
+				tName.setLimitDate(res.getDate("limit_date"));
+				tName.setUserId(res.getString("user_id"));
+				tName.setUserName(res.getString("user_name"));
+				tName.setStatusCode(res.getString("status_code"));
+				tName.setStatusName(res.getString("status_name"));
+				tName.setMemo(res.getString("memo"));
 
 			}
 		}
@@ -41,19 +53,19 @@ public class UpdateDAO {
 
 		int processingNumber = 0; //処理件数
 
-		String sql = "UPDATE m_task t1 LEFT OUTER JOIN m_user t2 ON t1.user_id = t2.user_id  LEFT OUTER JOIN m_category t3 ON t1.category_id= t3.category_id  LEFT OUTER JOIN m_status t4"
-				+ "ON t1.status_code= t4.status_code SET task_name=?,category_name=?,limit_date=?, user_name=?,memo=?,status_name=?"
-				+ " WHERE task_name=?";
+		String sql = "UPDATE t_task SET task_name=?,category_id=?,limit_date=?, user_id=?,status_code=?, memo=?"
+				+ " WHERE task_id=?";
 
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
 			// プレースホルダへの値の設定
 			pstmt.setString(1, updateResult.getTaskName());
-			pstmt.setString(2, updateResult.getCategoryName());
+			pstmt.setInt(2, updateResult.getCategoryId());
 			pstmt.setDate(3, updateResult.getLimitDate());
-			pstmt.setString(4, updateResult.getUserName());
-			pstmt.setString(5, updateResult.getMemo());
-			pstmt.setString(6, updateResult.getStatusName());
+			pstmt.setString(4, updateResult.getUserId());
+			pstmt.setString(5, updateResult.getStatusCode());
+			pstmt.setString(6, updateResult.getMemo());
+			pstmt.setInt(7, updateResult.getTaskId());
 			processingNumber = pstmt.executeUpdate();
 		}
 		return processingNumber;
@@ -72,6 +84,7 @@ public class UpdateDAO {
 				String categoryName = res.getString("category_name");
 				
 				CategoryBean category = new CategoryBean();
+				
 				category.setCategoryId(categoryId);
 				category.setCategoryName(categoryName);
 				categoryList.add(category);
@@ -93,6 +106,7 @@ public class UpdateDAO {
 				String statusName = res.getString("status_name");
 				
 				StatusBean status = new StatusBean();
+				
 				status.setStatusCode(statusCode);
 				status.setStatusName(statusName);
 				statusList.add(status);

@@ -15,100 +15,103 @@
 	List<CategoryBean> categoryList = (List<CategoryBean>) session.getAttribute("categoryList");
 	List<StatusBean> statusList = (List<StatusBean>) session.getAttribute("statusList");
 	List<UserBean> userList = (List<UserBean>) session.getAttribute("userList");
-	
 	%>
 	<br>
 
 	<form action="task-update-servlet" method="POST">
+				
+	
+	
 		<table border="1">
 			<tr>
 				<th>タスク名</th>
-				<td><input type="text" name="task_name"> 
-				<td><%=taskDetail.getTaskName()%></td>
-				</tr>
-				
+				<td><input type="text" value="<%=taskDetail.getTaskName()%>"
+					name="task_name">
+			</tr>
+
 			<tr>
 				<th>カテゴリ情報</th>
-					<td><select name="select_category">
+				<td><select name="select_category">
 						<option
-							value="<%=taskDetail.getCategoryId()%>,<%=taskDetail.getCategoryName()%>"><%=taskDetail.getCategoryName()%></option>
+							value="<%=taskDetail.getCategoryId()%>,<%=taskDetail.getCategoryName()%>">
+							<%=taskDetail.getCategoryName()%>
+						</option>
 						<%
 						for (CategoryBean category : categoryList) {
 							if (!(taskDetail.getCategoryName().equals(category.getCategoryName()))) {
 						%>
 						<option
-							value="<%=category.getCategoryId()%>,<%=category.getCategoryName()%>"><%=category.getCategoryName()%></option>
+							value="<%=category.getCategoryId()%>,<%=category.getCategoryName()%>">
+							<%=category.getCategoryName()%>
+						</option>
 						<%
-							}
+						}
 						}
 						%>
 				</select></td>
-			</tr> 
-				
+			</tr>
+
 			<tr>
 				<th>期限</th>
-				<td><input type="date" name="date" value=""></td>
-				
+				<td><input type="date" value="<%=taskDetail.getLimitDate()%>"
+					name="limit_date"></td>
+
 			</tr>
 			<tr>
 				<th>担当者情報</th>
-				<td><select name="user_id">
-				<%
-					for (UserBean user : userList) {
-					%>
-					<option value="<%=user.getUserId()%>"><%=user.getUserName()%></option>
-					<%
-					}
-					%>
-					</select></td>
+				<td><select name="user_name">
+						<option
+							value="<%=taskDetail.getUserId()%>,<%=taskDetail.getUserName()%>">
+							<%=taskDetail.getUserName()%></option>
+						<%
+						for (UserBean user : userList) {
+							if (!(taskDetail.getUserName().equals(user.getUserName()))) {
+						%>
+						<option value="<%=user.getUserId()%>,<%=user.getUserName()%>">
+							<%=user.getUserName()%></option>
+
+						<%
+						}
+						}
+						%>
+				</select></td>
 			</tr>
-			
+
 			<tr>
 				<th>ステータス情報</th>
-				<td><select name="status_code">
-			<%
-					for (StatusBean status : statusList) {
-					%>
-					<option value="<%=status.getStatusCode()%>"><%=status.getStatusName()%></option>
-					<%
-					}
-					%>
+				<td><select name="status_name">
+						<option
+							value="<%=taskDetail.getStatusCode()%>,<%=taskDetail.getStatusName()%>">
+							<%=taskDetail.getStatusName()%></option>
+						<%
+						for (StatusBean status : statusList) {
+							if (!(taskDetail.getStatusName().equals(status.getStatusName()))) {
+						%>
+						<option
+							value="<%=status.getStatusCode()%>,<%=status.getStatusName()%>">
+							<%=status.getStatusName()%></option>
+						<%
+						}
+						}
+						%>
 
-					</select></td>
+				</select></td>
 			</tr>
-		<tr>
+			<tr>
 				<th>メモ</th>
-				<td><input type="text" name="memo"></td>
-					
+				<td><input type="text" value="<%=taskDetail.getMemo()%>"
+					name="memo"></td>
+
 			</tr>
 		</table>
 		<br>
-		<div>
-				<input type="submit" value="変更する">
+		<input type ="hidden" value="<%=taskDetail.getTaskId() %>" name ="task_id">
+		<input type="submit" value="変更する">
 	</form>
 	<br>
-		<form action="menu.jsp" method="POST">
+	<form action="menu.jsp" method="POST">
 		<input type="submit" value="メニュー画面へ">
-		</div>
 	</form>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
