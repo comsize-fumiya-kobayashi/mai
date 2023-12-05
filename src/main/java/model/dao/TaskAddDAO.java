@@ -13,15 +13,26 @@ import model.entity.StatusBean;
 import model.entity.TaskListBean;
 import model.entity.UserBean;
 
+/**
+ * タスク追加DAOクラス
+ * @author 入江
+ */
 public class TaskAddDAO {
-	
+
+	/**
+	 * タスクを追加するメソッド
+	 * @param taskInfo タスク情報
+	 * @return 処理件数
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public int insertTask(TaskListBean taskInfo)
 			throws SQLException, ClassNotFoundException {
 
 		int processingNumber = 0; //処理件数
-		
+
 		String sql = "INSERT INTO t_task(task_name,category_id,limit_date,user_id,status_code,memo)VALUES(?,?,?,?,?,?)";
-		
+
 		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
@@ -35,7 +46,13 @@ public class TaskAddDAO {
 		}
 		return processingNumber;
 	}
-	
+
+	/**
+	 * カテゴリを全件表示するメソッド
+	 * @return カテゴリリスト
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public List<CategoryBean> selectCategory() throws SQLException, ClassNotFoundException {
 
 		List<CategoryBean> categoryList = new ArrayList<CategoryBean>();
@@ -56,7 +73,12 @@ public class TaskAddDAO {
 		return categoryList;
 	}
 
-	
+	/**
+	 * ステータスを全件表示するメソッド
+	 * @return ステータスリスト
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public List<StatusBean> selectStatus() throws SQLException, ClassNotFoundException {
 
 		List<StatusBean> statusList = new ArrayList<StatusBean>();
@@ -77,7 +99,12 @@ public class TaskAddDAO {
 		return statusList;
 	}
 
-	
+	/**
+	 * ユーザを全件表示するメソッド
+	 * @return ユーザリスト
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public List<UserBean> selectUser() throws SQLException, ClassNotFoundException {
 
 		List<UserBean> userList = new ArrayList<UserBean>();
@@ -97,5 +124,4 @@ public class TaskAddDAO {
 		}
 		return userList;
 	}
-
 }

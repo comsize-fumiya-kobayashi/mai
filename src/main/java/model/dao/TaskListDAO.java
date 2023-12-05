@@ -10,9 +10,18 @@ import java.util.List;
 
 import model.entity.TaskListBean;
 
-
+/**
+ * タスク一覧表示DAOクラス
+ * @author 入江
+ */
 public class TaskListDAO {
 	
+	/**
+	 * タスクを全件表示するメソッド
+	 * @return タスクリスト
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public List<TaskListBean> selectAll()
 			throws SQLException, ClassNotFoundException {
 
@@ -48,7 +57,6 @@ public class TaskListDAO {
 				task.setMemo(memo);
 				
 				taskList.add(task);
-				
 			}
 		}
 		return taskList;

@@ -3,21 +3,51 @@ package model.entity;
 import java.sql.Date;
 import java.sql.Timestamp;
 
+/**
+ * タスクBeanクラス
+ * @author 入江
+ */
+// TODO Beanの名前変更(タスクカテゴリユーザステータスBeanクラス：TaskCategoryUserStatusBean)
+// TODO UpdateDeleteもこのBeanを使用する
 public class TaskListBean {
 	
+	/** タスクID */
 	private int taskId;
+	
+	/** タスク名 */
 	private String taskName;
+	
+	/** カテゴリID */
 	private int categoryId;
+	
+	/** カテゴリ名 */
 	private String categoryName;
+	
+	/** 期限 */
 	private Date limitDate;
+	
+	/** ユーザID */
 	private String userId;
+	
+	/** ユーザ名 */
 	private String userName;
+	
+	/** ステータスコード */
 	private String statusCode;
+	
+	/** ステータス名 */
 	private String statusName;
+	
+	/** メモ */
 	private String memo;
+	
+	/** 登録日時 */
 	private Timestamp createDatetime;
+	
+	/** 更新日時 */
 	private Timestamp updateDatetime;
 	
+	/** デフォルトコンストラクター */
 	public TaskListBean() {
 		super();
 	}
@@ -117,5 +147,4 @@ public class TaskListBean {
 	public void setUpdateDatetime(Timestamp updateDatetime) {
 		this.updateDatetime = updateDatetime;
 	}
-	
 }
