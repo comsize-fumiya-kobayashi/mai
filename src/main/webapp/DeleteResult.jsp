@@ -4,19 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>-削除結果画面</title>
+<title>削除結果画面</title>
 </head>
 <body>
-	<h1>-削除結果画面</h1>
-	<hr>
-
 	<%
 		UpdateBean taskResult = (UpdateBean) session.getAttribute("deleteTask");
 		int processingNumber = (Integer) request.getAttribute("processingNumber");
 		if (processingNumber > 0) {
 	%>
+	<h1>削除結果画面</h1>
+	<hr>
 	<h2>次のデータを削除しました。</h2>
-	<br>
 	<br>
 	<table border="1">
 		<tr>
@@ -29,7 +27,15 @@
 		</tr>
 		<tr>
 			<th>期限</th>
-			<td><%=taskResult.getLimitDate()%></td>
+			<td>
+				<%
+				if(taskResult.getLimitDate() != null){
+				%>
+					<%=taskResult.getLimitDate()%>
+				<%
+				}
+				%>
+			</td>
 		</tr>
 		<tr>
 			<th>担当情報</th>
@@ -62,11 +68,19 @@
 		</tr>
 		<tr>
 			<th>期限</th>
-			<td><%=taskResult.getLimitDate()%></td>
+			<td>
+			<%
+			if(taskResult.getLimitDate() != null){
+			%>
+				<%=taskResult.getLimitDate()%>
+			<%
+			}
+			%>
+			</td>
 		</tr>
 		<tr>
 			<th>担当情報</th>
-			<td><%=taskResult.getUserName()%></td>
+			<td><%=taskResult.getUserName() %></td>
 		</tr>
 		<tr>
 			<th>ステータス情報</th>

@@ -2,7 +2,6 @@ package servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,10 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.dao.DeleteDAO;
-import model.entity.CategoryBean;
-import model.entity.StatusBean;
 import model.entity.UpdateBean;
-import model.entity.UserBean;
 /**
  * Servlet implementation class ItemDeleteServlet
  */
@@ -35,9 +31,9 @@ public class TaskDeleteServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		int taskId = Integer.parseInt(request.getParameter("task_id"));
 		
-		List<CategoryBean> categoryList = null;
-		List<StatusBean> statusList = null;
-		List<UserBean> userList = null;
+//		List<CategoryBean> categoryList = null;
+//		List<StatusBean> statusList = null;
+//		List<UserBean> userList = null;
 
 		DeleteDAO dao = new DeleteDAO();
 		UpdateBean deleteTask = new UpdateBean();
@@ -45,9 +41,6 @@ public class TaskDeleteServlet extends HttpServlet {
 		try {
 			// プルダウン用のカテゴリ一覧を取得
 			deleteTask = dao.selectTask(taskId);
-			categoryList = dao.selectCategory();
-			statusList = dao.selectStatus();
-			userList = dao.selectUser();
 
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
@@ -57,9 +50,6 @@ public class TaskDeleteServlet extends HttpServlet {
 
 		// リクエストスコープへの属性の
 		session.setAttribute("deleteTask", deleteTask);
-		session.setAttribute("categoryList", categoryList);
-		session.setAttribute("statusList", statusList);
-		session.setAttribute("userList", userList);
 
 		RequestDispatcher rd = request.getRequestDispatcher("DeleteConfirm.jsp");
 		rd.forward(request, response);

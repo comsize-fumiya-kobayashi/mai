@@ -32,7 +32,15 @@
 			</tr>
 			<tr>
 				<th>期限</th>
-				<td><%=deleteDetail.getLimitDate()%></td>
+				<td>
+				<%
+				if(deleteDetail.getLimitDate() != null){
+				%>
+					<%=deleteDetail.getLimitDate()%>
+				<%
+				}
+				%>
+				</td>
 			</tr>
 			<tr>
 				<th>担当者情報</th>
@@ -53,8 +61,8 @@
 		<input type="submit" value="削除する">
 	</form>
 	<br>
-	<form action="menu.jsp" method="POST">
-		<input type="submit" value="詳細表示へ">
+	<form action="task-list-servlet" method="GET">
+		<input type="submit" value="タスク一覧画面へ">
 	</form>
 </body>
 </html>

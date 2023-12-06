@@ -98,7 +98,13 @@ public class TaskUpdateServlet extends HttpServlet {
 		updateTask.setStatusName(statusName[1]);
 		
 		updateTask.setTaskName(request.getParameter("task_name"));
-		updateTask.setLimitDate(Date.valueOf(request.getParameter("limit_date")));
+		
+		if(!request.getParameter("limit_date").isEmpty()) {
+			updateTask.setLimitDate(Date.valueOf(request.getParameter("limit_date")));
+		
+		//	if (request.getParameter("limit_date")!=null) {
+			// updateTask.setLimitDate(Date.valueOf(request.getParameter("limit_date")));
+		}
 		updateTask.setMemo(request.getParameter("memo"));
 		updateTask.setTaskId(Integer.parseInt(request.getParameter("task_id")));
 
