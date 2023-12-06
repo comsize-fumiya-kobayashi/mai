@@ -15,8 +15,8 @@ public class DeleteDAO {
 
 	/**
 	 * 登録画面から削除する情報を削除画面に表示するメソッド
-	 * @param taskId
-	 * @return
+	 * @param taskId タスクID
+	 * @return タスクIDで検索したタスク情報
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
@@ -57,8 +57,8 @@ public class DeleteDAO {
 	
 	/**
 	 * 選択したタスクを削除するメソッド
-	 * @param taskId
-	 * @return
+	 * @param taskId タスクID
+	 * @return 処理件数
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
