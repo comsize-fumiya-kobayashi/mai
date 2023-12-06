@@ -51,7 +51,8 @@
 			</form>
 			</td>
 			<td>
-			<form action="DeleteConfirm.jsp" method="POST">
+			<form action="task-delete-servlet" method="GET">
+				<input type = "hidden" value="<%=task.getTaskId() %>" name="task_id">
 			<input type="submit" value="削除">
 			</form>
 			</td>
