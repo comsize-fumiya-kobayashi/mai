@@ -68,7 +68,7 @@ public class TaskUpdateServlet extends HttpServlet {
 
 
 		// 商品登録画面への転送
-		RequestDispatcher rd = request.getRequestDispatcher("Update.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("task-update.jsp");
 		rd.forward(request, response);
 	}
 
@@ -123,9 +123,9 @@ public class TaskUpdateServlet extends HttpServlet {
 		//	session.removeAttribute("updateTask");
 		String url = "";
 		if (processingNumber > 0) {
-			url = "Update-success.jsp";
+			url = "update-success.jsp";
 		} else {
-			url = "UpdateFailure.jsp";
+			url = "update-failure.jsp";
 
 		}
 		// 変更結果画面に遷移

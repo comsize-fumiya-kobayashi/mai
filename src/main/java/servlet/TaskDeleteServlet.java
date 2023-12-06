@@ -51,7 +51,7 @@ public class TaskDeleteServlet extends HttpServlet {
 		// リクエストスコープへの属性の
 		session.setAttribute("deleteTask", deleteTask);
 
-		RequestDispatcher rd = request.getRequestDispatcher("DeleteConfirm.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("delete-confirm.jsp");
 		rd.forward(request, response);
 
 	}
@@ -74,7 +74,7 @@ public class TaskDeleteServlet extends HttpServlet {
 				//request.setAttribute("deleteTask", deleteTask);
 				request.setAttribute("processingNumber", processingNumber);
 				// 削除結果画面に遷移
-				RequestDispatcher rd = request.getRequestDispatcher("DeleteResult.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("delete-result.jsp");
 				rd.forward(request, response);
 					
 	}
