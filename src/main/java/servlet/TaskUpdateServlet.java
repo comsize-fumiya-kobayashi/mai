@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.dao.UpdateDAO;
+import model.dao.TaskUpdateDAO;
 import model.entity.CategoryBean;
 import model.entity.StatusBean;
 import model.entity.TaskCategoryUserStatusBean;
@@ -47,7 +47,7 @@ public class TaskUpdateServlet extends HttpServlet {
 		List<StatusBean> statusList = null;
 		List<UserBean> userList = null;
 
-		UpdateDAO dao = new UpdateDAO();
+		TaskUpdateDAO dao = new TaskUpdateDAO();
 		TaskCategoryUserStatusBean updateTask = new TaskCategoryUserStatusBean();
 
 		try {
@@ -85,7 +85,7 @@ public class TaskUpdateServlet extends HttpServlet {
 		//	HttpSession session = request.getSession();
 
 		int processingNumber = 0;
-		UpdateDAO dao = new UpdateDAO();
+		TaskUpdateDAO dao = new TaskUpdateDAO();
 		TaskCategoryUserStatusBean updateTask = new TaskCategoryUserStatusBean();
 		
 		// 選択されたカテゴリとコードを取得し、カンマ区切りで配列に分割
@@ -106,9 +106,7 @@ public class TaskUpdateServlet extends HttpServlet {
 		
 		if(!request.getParameter("limit_date").isEmpty()) {
 			updateTask.setLimitDate(Date.valueOf(request.getParameter("limit_date")));
-		
-		//	if (request.getParameter("limit_date")!=null) {
-			// updateTask.setLimitDate(Date.valueOf(request.getParameter("limit_date")));
+				
 		}
 		updateTask.setMemo(request.getParameter("memo"));
 		updateTask.setTaskId(Integer.parseInt(request.getParameter("task_id")));
@@ -124,8 +122,7 @@ public class TaskUpdateServlet extends HttpServlet {
 		request.setAttribute("updateTask", updateTask);
 		// 処理件数をリクエストスコープに設定
 		request.setAttribute("processingNumber", processingNumber);
-		// セッション情報を削除
-		//	session.removeAttribute("updateTask");
+	
 		String url = "";
 		if (processingNumber > 0) {
 			url = "update-success.jsp";

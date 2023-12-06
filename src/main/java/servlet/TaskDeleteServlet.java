@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.dao.DeleteDAO;
+import model.dao.TaskDeleteDAO;
 import model.entity.TaskCategoryUserStatusBean;
 /**
  * Servlet implementation class ItemDeleteServlet
@@ -35,7 +35,7 @@ public class TaskDeleteServlet extends HttpServlet {
 		int taskId = Integer.parseInt(request.getParameter("task_id"));
 		
 
-		DeleteDAO dao = new DeleteDAO();
+		TaskDeleteDAO dao = new TaskDeleteDAO();
 		TaskCategoryUserStatusBean deleteTask = new TaskCategoryUserStatusBean();
 
 		try {
@@ -63,7 +63,7 @@ public class TaskDeleteServlet extends HttpServlet {
 				request.setCharacterEncoding("UTF-8");
 				
 				int taskId = Integer.parseInt(request.getParameter("task_id"));
-				DeleteDAO dao = new DeleteDAO();
+				TaskDeleteDAO dao = new TaskDeleteDAO();
 				int processingNumber = 0; //処理件数
 				try {
 					// 削除処理

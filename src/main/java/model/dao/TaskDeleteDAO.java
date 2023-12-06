@@ -11,7 +11,7 @@ import model.entity.TaskCategoryUserStatusBean;
  * タスク削除DAOクラス
  * @author アルチャナ
  */
-public class DeleteDAO {
+public class TaskDeleteDAO {
 
 	/**
 	 * 登録画面から削除する情報を削除画面に表示するメソッド

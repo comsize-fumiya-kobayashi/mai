@@ -17,12 +17,12 @@ import model.entity.UserBean;
  *  * タスク編集DAOクラス
  * @author アルチャナ
  */
-public class UpdateDAO {
+public class TaskUpdateDAO {
 	
 	/**
-	 * *登録画面から編集する情報を編集画面に表示するメソッド
-	 * @param taskId
-	 * @return
+	 * *登録画から編集する情報を編集画面に表示するメソッド
+	 * @param taskId タスクID
+	 * @return タスクIDで検索したタスク情報
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
@@ -63,8 +63,8 @@ public class UpdateDAO {
 
 	/**
 	 * タスク名を編集するメソッド
-	 * @param updateResult
-	 * @return
+	 * @param updateResult タスク名,カテゴリ情報,期限,担当者情報,ステータス情報,メモ
+	 * @return タスクIDで編集したタスク情報
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
@@ -92,7 +92,7 @@ public class UpdateDAO {
 
 	/**
 	 * カテゴリ情報を選択するメソッド
-	 * @return
+	 * @return 編集したカテゴリ情報
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
@@ -120,7 +120,7 @@ public class UpdateDAO {
 
 	/**
 	 * ステータス情報を選択するメソッド
-	 * @return
+	 * @return 編集したステータス情報
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
@@ -148,7 +148,7 @@ public class UpdateDAO {
 
 	/**
 	 * 担当者情報を選択するメソッド
-	 * @return
+	 * @return 編集した担当者情報
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
