@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
-	import="java.util.List,model.entity.UpdateBean,model.entity.CategoryBean,model.entity.StatusBean, model.entity.UserBean"%>
+	import="java.util.List,model.entity.TaskCategoryUserStatusBean,model.entity.CategoryBean,model.entity.StatusBean, model.entity.UserBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,7 @@
 	<h1>タスク編集画面</h1>
 	<hr>
 	<%
-	UpdateBean taskDetail = (UpdateBean) session.getAttribute("updateTask");
+	TaskCategoryUserStatusBean taskDetail = (TaskCategoryUserStatusBean) session.getAttribute("updateTask");
 	List<CategoryBean> categoryList = (List<CategoryBean>) session.getAttribute("categoryList");
 	List<StatusBean> statusList = (List<StatusBean>) session.getAttribute("statusList");
 	List<UserBean> userList = (List<UserBean>) session.getAttribute("userList");

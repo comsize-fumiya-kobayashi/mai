@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.List, model.entity.TaskListBean"%>
+    pageEncoding="UTF-8" import="java.util.List,model.entity.TaskCategoryUserStatusBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body>
 	<%
-	List<TaskListBean> taskList = (List<TaskListBean>) request.getAttribute("taskList");
+		List<TaskCategoryUserStatusBean> taskList = (List<TaskCategoryUserStatusBean>) request.getAttribute("taskList");
 	%>
 	<h1>タスク一覧</h1>
 	<hr>
@@ -29,7 +29,7 @@
 			<th>削除</th>
 		</tr>
 		<%
-		for (TaskListBean task : taskList) {
+				for (TaskCategoryUserStatusBean task : taskList) {
 		%>
 		<tr>
 			<td><%=task.getTaskName()%></td>

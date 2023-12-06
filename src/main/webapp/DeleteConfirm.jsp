@@ -1,6 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="model.entity.UpdateBean"%>
+	pageEncoding="UTF-8" import="model.entity.TaskCategoryUserStatusBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 </head>
 <body>
 	<%
-		UpdateBean deleteDetail = (UpdateBean) session.getAttribute("deleteTask");
+		TaskCategoryUserStatusBean deleteDetail = (TaskCategoryUserStatusBean) session.getAttribute("deleteTask");
 	
 	%>
 

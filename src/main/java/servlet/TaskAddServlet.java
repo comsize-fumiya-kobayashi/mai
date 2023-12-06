@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 import model.dao.TaskAddDAO;
 import model.entity.CategoryBean;
 import model.entity.StatusBean;
-import model.entity.TaskListBean;
+import model.entity.TaskCategoryUserStatusBean;
 import model.entity.UserBean;
 
 /**
@@ -78,7 +78,7 @@ public class TaskAddServlet extends HttpServlet {
 		// DAOのインスタンス化
 		TaskAddDAO dao = new TaskAddDAO();
 		// Beanのインスタンス化
-		TaskListBean taskList = new TaskListBean();
+		TaskCategoryUserStatusBean taskList = new TaskCategoryUserStatusBean();
 
 		// 入力された情報をbeanにセット
 		

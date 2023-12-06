@@ -10,7 +10,7 @@ import java.util.List;
 
 import model.entity.CategoryBean;
 import model.entity.StatusBean;
-import model.entity.TaskListBean;
+import model.entity.TaskCategoryUserStatusBean;
 import model.entity.UserBean;
 
 /**
@@ -26,7 +26,7 @@ public class TaskAddDAO {
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
-	public int insertTask(TaskListBean taskInfo)
+	public int insertTask(TaskCategoryUserStatusBean taskInfo)
 			throws SQLException, ClassNotFoundException {
 
 		int processingNumber = 0; //処理件数

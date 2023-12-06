@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 import model.dao.UpdateDAO;
 import model.entity.CategoryBean;
 import model.entity.StatusBean;
-import model.entity.UpdateBean;
+import model.entity.TaskCategoryUserStatusBean;
 import model.entity.UserBean;
 
 /**
@@ -45,7 +45,7 @@ public class TaskUpdateServlet extends HttpServlet {
 		List<UserBean> userList = null;
 
 		UpdateDAO dao = new UpdateDAO();
-		UpdateBean updateTask = new UpdateBean();
+		TaskCategoryUserStatusBean updateTask = new TaskCategoryUserStatusBean();
 
 		try {
 			// プルダウン用のカテゴリ一覧を取得
@@ -81,7 +81,7 @@ public class TaskUpdateServlet extends HttpServlet {
 
 		int processingNumber = 0;
 		UpdateDAO dao = new UpdateDAO();
-		UpdateBean updateTask = new UpdateBean();
+		TaskCategoryUserStatusBean updateTask = new TaskCategoryUserStatusBean();
 		
 		// 選択されたカテゴリとコードを取得し、カンマ区切りで配列に分割
 		String[] selectCategory = request.getParameter("select_category").split(",");

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="model.entity.UpdateBean"%>
+	pageEncoding="UTF-8" import="model.entity.TaskCategoryUserStatusBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body>
 	<%
-		UpdateBean taskResult = (UpdateBean) session.getAttribute("deleteTask");
+		TaskCategoryUserStatusBean taskResult = (TaskCategoryUserStatusBean) session.getAttribute("deleteTask");
 		int processingNumber = (Integer) request.getAttribute("processingNumber");
 		if (processingNumber > 0) {
 	%>
@@ -38,7 +38,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>担当情報</th>
+			<th>担当者情報</th>
 			<td><%=taskResult.getUserName()%></td>
 		</tr>
 		<tr>

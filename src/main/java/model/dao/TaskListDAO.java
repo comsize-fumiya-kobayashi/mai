@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.entity.TaskListBean;
+import model.entity.TaskCategoryUserStatusBean;
 
 /**
  * タスク一覧表示DAOクラス
@@ -22,10 +22,10 @@ public class TaskListDAO {
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
-	public List<TaskListBean> selectAll()
+	public List<TaskCategoryUserStatusBean> selectAll()
 			throws SQLException, ClassNotFoundException {
 
-		List<TaskListBean> taskList = new ArrayList<TaskListBean>();
+		List<TaskCategoryUserStatusBean> taskList = new ArrayList<TaskCategoryUserStatusBean>();
 		String sql = "SELECT t1.task_id, t1.task_name, t2.category_name, t1.limit_date, t3.user_name, t4.status_name, t1.memo "
 				+ "FROM t_task t1 "
 				+ "LEFT JOIN m_category t2 ON t1.category_id = t2.category_id "
@@ -47,7 +47,7 @@ public class TaskListDAO {
 				String statusName = res.getString("status_name");
 				String memo = res.getString("memo");
 				
-				TaskListBean task = new TaskListBean();
+				TaskCategoryUserStatusBean task = new TaskCategoryUserStatusBean();
 				task.setTaskId(taskId);
 				task.setTaskName(taskName);
 				task.setCategoryName(categoryName);

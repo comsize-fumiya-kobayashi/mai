@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.dao.DeleteDAO;
-import model.entity.UpdateBean;
+import model.entity.TaskCategoryUserStatusBean;
 /**
  * Servlet implementation class ItemDeleteServlet
  */
@@ -36,7 +36,7 @@ public class TaskDeleteServlet extends HttpServlet {
 //		List<UserBean> userList = null;
 
 		DeleteDAO dao = new DeleteDAO();
-		UpdateBean deleteTask = new UpdateBean();
+		TaskCategoryUserStatusBean deleteTask = new TaskCategoryUserStatusBean();
 
 		try {
 			// プルダウン用のカテゴリ一覧を取得
@@ -62,7 +62,7 @@ public class TaskDeleteServlet extends HttpServlet {
 				
 				int taskId = Integer.parseInt(request.getParameter("task_id"));
 				DeleteDAO dao = new DeleteDAO();
-			//	UpdateBean deleteTask = new UpdateBean();
+			//	TaskCategoryUserStatusBean deleteTask = new TaskCategoryUserStatusBean();
 				int processingNumber = 0; //処理件数
 				try {
 					// 削除処理

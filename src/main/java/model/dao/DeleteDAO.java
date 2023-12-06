@@ -5,10 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.entity.UpdateBean;
+import model.entity.TaskCategoryUserStatusBean;
 
 public class DeleteDAO {
-	public UpdateBean selectTask(int taskId)
+	public TaskCategoryUserStatusBean selectTask(int taskId)
 			throws SQLException, ClassNotFoundException {
 
 		String sql = "SELECT t1.task_id, t1.task_name,t1.category_id,t1.user_id,t1.status_code, t2.category_name, t1.limit_date, t3.user_name, t4.status_name, t1.memo "
@@ -17,7 +17,7 @@ public class DeleteDAO {
 				+ "LEFT JOIN m_user t3 ON t1.user_id = t3.user_id "
 				+ "LEFT JOIN m_status t4 ON t1.status_code = t4.status_code WHERE t1.task_id =?;";
 
-		UpdateBean tName = new UpdateBean();
+		TaskCategoryUserStatusBean tName = new TaskCategoryUserStatusBean();
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 				

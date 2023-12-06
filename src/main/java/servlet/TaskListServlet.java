@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.dao.TaskListDAO;
-import model.entity.TaskListBean;
+import model.entity.TaskCategoryUserStatusBean;
 
 /**
  * Servlet implementation class TaskListServlet
@@ -35,7 +35,7 @@ public class TaskListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		
-			List<TaskListBean> taskList = null;
+			List<TaskCategoryUserStatusBean> taskList = null;
 			// DAOの生成
 			TaskListDAO dao = new TaskListDAO();
 
