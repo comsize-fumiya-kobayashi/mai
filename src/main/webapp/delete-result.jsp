@@ -7,13 +7,13 @@
 <title>削除結果画面</title>
 </head>
 <body>
+	<h1>削除結果画面</h1>
+	<hr>
 	<%
 		TaskCategoryUserStatusBean taskResult = (TaskCategoryUserStatusBean) session.getAttribute("deleteTask");
 		int processingNumber = (Integer) request.getAttribute("processingNumber");
 		if (processingNumber > 0) {
 	%>
-	<h1>削除結果画面</h1>
-	<hr>
 	<h2>次のデータを削除しました。</h2>
 	<br>
 	<table border="1">
@@ -55,7 +55,6 @@
 		} else {
 	%>
 	<h2>次のデータを削除できませんでした。</h2>
-	<br>
 	<br>
 	<table border="1">
 		<tr>

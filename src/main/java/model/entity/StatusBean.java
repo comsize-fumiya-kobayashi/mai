@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 /**
  * ステータスBeanクラス
- * @author 入江
+ * @author アルチャナ
  */
 public class StatusBean {
 	

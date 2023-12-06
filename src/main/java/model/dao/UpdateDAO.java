@@ -13,7 +13,19 @@ import model.entity.StatusBean;
 import model.entity.TaskCategoryUserStatusBean;
 import model.entity.UserBean;
 
+/**
+ *  * タスク編集DAOクラス
+ * @author アルチャナ
+ */
 public class UpdateDAO {
+	
+	/**
+	 * *登録画面から編集する情報を編集画面に表示するメソッド
+	 * @param taskId
+	 * @return
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public TaskCategoryUserStatusBean selectTask(int taskId)
 			throws SQLException, ClassNotFoundException {
 
@@ -49,6 +61,13 @@ public class UpdateDAO {
 
 	}
 
+	/**
+	 * タスク名を編集するメソッド
+	 * @param updateResult
+	 * @return
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public int updateTask(TaskCategoryUserStatusBean updateResult) throws SQLException, ClassNotFoundException {
 
 		int processingNumber = 0; //処理件数
@@ -71,6 +90,12 @@ public class UpdateDAO {
 		return processingNumber;
 	}
 
+	/**
+	 * カテゴリ情報を選択するメソッド
+	 * @return
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public List<CategoryBean> selectCategory() throws SQLException, ClassNotFoundException {
 
 		List<CategoryBean> categoryList = new ArrayList<CategoryBean>();
@@ -93,6 +118,12 @@ public class UpdateDAO {
 		return categoryList;
 	}
 
+	/**
+	 * ステータス情報を選択するメソッド
+	 * @return
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public List<StatusBean> selectStatus() throws SQLException, ClassNotFoundException {
 
 		List<StatusBean> statusList = new ArrayList<StatusBean>();
@@ -115,6 +146,12 @@ public class UpdateDAO {
 		return statusList;
 	}
 
+	/**
+	 * 担当者情報を選択するメソッド
+	 * @return
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public List<UserBean> selectUser() throws SQLException, ClassNotFoundException {
 
 		List<UserBean> userList = new ArrayList<UserBean>();

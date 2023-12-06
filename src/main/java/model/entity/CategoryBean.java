@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 /**
  * カテゴリBeanクラス
- * @author 入江
+ * @author アルチャナ
  */
 public class CategoryBean {
 	

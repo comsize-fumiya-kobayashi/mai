@@ -7,7 +7,19 @@ import java.sql.SQLException;
 
 import model.entity.TaskCategoryUserStatusBean;
 
+/**
+ * タスク削除DAOクラス
+ * @author アルチャナ
+ */
 public class DeleteDAO {
+
+	/**
+	 * 登録画面から削除する情報を削除画面に表示するメソッド
+	 * @param taskId
+	 * @return
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public TaskCategoryUserStatusBean selectTask(int taskId)
 			throws SQLException, ClassNotFoundException {
 
@@ -43,6 +55,13 @@ public class DeleteDAO {
 
 	}
 	
+	/**
+	 * 選択したタスクを削除するメソッド
+	 * @param taskId
+	 * @return
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public int deleteTask(int  taskId) throws SQLException, ClassNotFoundException {
 
 		

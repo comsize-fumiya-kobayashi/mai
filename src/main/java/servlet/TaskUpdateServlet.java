@@ -21,6 +21,7 @@ import model.entity.UserBean;
 
 /**
  * Servlet implementation class TaskAddServlet
+ * @author アルチャナ
  */
 @WebServlet("/task-update-servlet")
 public class TaskUpdateServlet extends HttpServlet {
@@ -32,7 +33,9 @@ public class TaskUpdateServlet extends HttpServlet {
 	public TaskUpdateServlet() {
 		super();
 	}
-
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -71,7 +74,9 @@ public class TaskUpdateServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("task-update.jsp");
 		rd.forward(request, response);
 	}
-
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
