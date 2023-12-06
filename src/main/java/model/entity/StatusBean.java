@@ -2,12 +2,22 @@ package model.entity;
 
 import java.sql.Timestamp;
 
+/**
+ * ステータスBeanクラス
+ * @author 入江
+ */
 public class StatusBean {
 	
+	/** ステータスコード */
 	private String statusCode;
+	
+	/** ステータス名 */
 	private String statusName;
+	
+	/** 更新日時 */
 	private Timestamp updateDatetme;
 	
+	/** デフォルトコンストラクター */
 	public StatusBean() {
 		super();
 	}
@@ -35,5 +45,4 @@ public class StatusBean {
 	public void setUpdateDatetme(Timestamp updateDatetme) {
 		this.updateDatetme = updateDatetme;
 	}
-	
 }

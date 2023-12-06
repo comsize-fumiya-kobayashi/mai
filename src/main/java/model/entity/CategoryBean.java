@@ -2,12 +2,22 @@ package model.entity;
 
 import java.sql.Timestamp;
 
+/**
+ * カテゴリBeanクラス
+ * @author 入江
+ */
 public class CategoryBean {
 	
+	/** カテゴリID */
 	private int categoryId;
+	
+	/** カテゴリ名 */
 	private String categoryName;
+	
+	/** 更新日時 */
 	private Timestamp updateDatetime;
 	
+	/** デフォルトコンストラクター */
 	public CategoryBean() {
 		super();
 	}
@@ -35,5 +45,4 @@ public class CategoryBean {
 	public void setUpdateDatetime(Timestamp updateDatetime) {
 		this.updateDatetime = updateDatetime;
 	}
-	
 }
