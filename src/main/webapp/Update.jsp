@@ -21,7 +21,6 @@
 	<form action="task-update-servlet" method="POST">
 				
 	
-	
 		<table border="1">
 			<tr>
 				<th>タスク名</th>

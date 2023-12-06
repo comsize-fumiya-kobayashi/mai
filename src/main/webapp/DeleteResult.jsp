@@ -11,7 +11,7 @@
 	<hr>
 
 	<%
-		UpdateBean itemResult = (UpdateBean) session.getAttribute("updateDetail");
+		UpdateBean taskResult = (UpdateBean) session.getAttribute("deleteTask");
 		int processingNumber = (Integer) request.getAttribute("processingNumber");
 		if (processingNumber > 0) {
 	%>
@@ -21,27 +21,27 @@
 	<table border="1">
 		<tr>
 			<th>タスク名</th>
-			<td><%=itemResult.getTaskName()%></td>
+			<td><%=taskResult.getTaskName()%></td>
 		</tr>
 		<tr>
 			<th>カテゴリ情報</th>
-			<td><%=itemResult.getCategoryName()%></td>
+			<td><%=taskResult.getCategoryName()%></td>
 		</tr>
 		<tr>
 			<th>期限</th>
-			<td><%=itemResult.getLimitDate()%></td>
+			<td><%=taskResult.getLimitDate()%></td>
 		</tr>
 		<tr>
 			<th>担当情報</th>
-			<td><%=itemResult.getUserName()%></td>
+			<td><%=taskResult.getUserName()%></td>
 		</tr>
 		<tr>
 			<th>ステータス情報</th>
-			<td><%=itemResult.getStatusName()%></td>
+			<td><%=taskResult.getStatusName()%></td>
 		</tr>
 		<tr>
 			<th>メモ</th>
-			<td><%=itemResult.getMemo()%></td>
+			<td><%=taskResult.getMemo()%></td>
 		</tr>
 	</table>
 
@@ -54,27 +54,27 @@
 	<table border="1">
 		<tr>
 			<th>タスク名</th>
-			<td><%=itemResult.getTaskName()%></td>
+			<td><%=taskResult.getTaskName()%></td>
 		</tr>
 		<tr>
 			<th>カテゴリ情報</th>
-			<td><%=itemResult.getCategoryName()%></td>
+			<td><%=taskResult.getCategoryName()%></td>
 		</tr>
 		<tr>
 			<th>期限</th>
-			<td><%=itemResult.getLimitDate()%></td>
+			<td><%=taskResult.getLimitDate()%></td>
 		</tr>
 		<tr>
 			<th>担当情報</th>
-			<td><%=itemResult.getUserName()%></td>
+			<td><%=taskResult.getUserName()%></td>
 		</tr>
 		<tr>
 			<th>ステータス情報</th>
-			<td><%=itemResult.getStatusName()%></td>
+			<td><%=taskResult.getStatusName()%></td>
 		</tr>
 		<tr>
 			<th>メモ</th>
-			<td><%=itemResult.getMemo()%></td>
+			<td><%=taskResult.getMemo()%></td>
 		</tr>
 	</table>
 	

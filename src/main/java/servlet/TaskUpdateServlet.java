@@ -66,10 +66,7 @@ public class TaskUpdateServlet extends HttpServlet {
 		session.setAttribute("statusList", statusList);
 		session.setAttribute("userList", userList);
 
-//		request.setAttribute("updateTask", updateTask);
-//		request.setAttribute("categoryList", categoryList);
-//		request.setAttribute("statusList", statusList);
-//		request.setAttribute("userList", userList);
+
 		// 商品登録画面への転送
 		RequestDispatcher rd = request.getRequestDispatcher("Update.jsp");
 		rd.forward(request, response);
@@ -101,13 +98,8 @@ public class TaskUpdateServlet extends HttpServlet {
 		updateTask.setStatusName(statusName[1]);
 		
 		updateTask.setTaskName(request.getParameter("task_name"));
-		
-
 		updateTask.setLimitDate(Date.valueOf(request.getParameter("limit_date")));
-	
-	//	updateTask.setUserName(request.getParameter("user_name"));
 		updateTask.setMemo(request.getParameter("memo"));
-	//	updateTask.setStatusName(request.getParameter("status_name"));
 		updateTask.setTaskId(Integer.parseInt(request.getParameter("task_id")));
 
 		try {
