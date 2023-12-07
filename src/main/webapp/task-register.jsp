@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.List,model.entity.CategoryBean" import="java.util.List,model.entity.StatusBean" import="java.util.List,model.entity.UserBean"%>
+	pageEncoding="UTF-8"
+	import="java.util.List,model.entity.CategoryBean, java.util.List,model.entity.StatusBean, java.util.List,model.entity.UserBean, java.time.LocalDate"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,7 @@
 	List<CategoryBean> categoryList = (List<CategoryBean>) session.getAttribute("categoryList");
 	List<StatusBean> statusList = (List<StatusBean>) session.getAttribute("statusList");
 	List<UserBean> userList = (List<UserBean>) session.getAttribute("userList");
+	LocalDate localDate = (LocalDate) request.getAttribute("localDate");
 	%>
 	<h1>タスク登録画面</h1>
 	<hr>
@@ -22,43 +24,49 @@
 			</tr>
 			<tr>
 				<th>カテゴリ情報</th>
-				<td><select name="category_id">
-				<%
-					for (CategoryBean category : categoryList) {
-					%>
-					<option value="<%=category.getCategoryId()%>"><%=category.getCategoryName()%></option>
-					<%
-					}
-					%>
-					</select></td>
+				<td>
+					<select name="category_id">
+						<%
+						for (CategoryBean category : categoryList) {
+						%>
+							<option value="<%=category.getCategoryId()%>"><%=category.getCategoryName()%></option>
+						<%
+						}
+						%>
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<th>期限</th>
-				<td><input type="date" name="date" value=""></td>
+				<td><input type="date" name="limit_date" min="<%=localDate %>"></td>
 			</tr>
 			<tr>
 				<th>担当者情報</th>
-				<td><select name="user_id">
-				<%
-					for (UserBean user : userList) {
-					%>
-					<option value="<%=user.getUserId()%>"><%=user.getUserName()%></option>
-					<%
-					}
-					%>
-					</select></td>
+				<td>
+					<select name="user_id">
+						<%
+						for (UserBean user : userList) {
+						%>
+							<option value="<%=user.getUserId()%>"><%=user.getUserName()%></option>
+						<%
+						}
+						%>
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<th>ステータス情報</th>
-				<td><select name="status_code">
-				<%
-					for (StatusBean status : statusList) {
-					%>
-					<option value="<%=status.getStatusCode()%>"><%=status.getStatusName()%></option>
-					<%
-					}
-					%>
-					</select></td>
+				<td>
+					<select name="status_code">
+						<%
+						for (StatusBean status : statusList) {
+						%>
+							<option value="<%=status.getStatusCode()%>"><%=status.getStatusName()%></option>
+						<%
+						}
+						%>
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<th>メモ</th>
@@ -66,15 +74,13 @@
 			</tr>
 		</table>
 		<br>
-		<div>
-			<input type="submit" value="登録実行"> 
-			<input type="reset"value="クリア">
+			<input type="submit" value="登録実行">
+			<input type="reset" value="クリア">
 	</form>
 	<br>
 	<br>
 	<form action="menu.jsp" method="POST">
 		<input type="submit" value="メニュー画面へ">
-		</div>
 	</form>
 </body>
 </html>

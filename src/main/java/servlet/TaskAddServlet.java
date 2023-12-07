@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -43,6 +44,9 @@ public class TaskAddServlet extends HttpServlet {
 		List<CategoryBean> categoryList = null;
 		List<StatusBean> statusList = null;
 		List<UserBean> userList = null;
+		
+		// 現在日付取得
+		LocalDate localDate = LocalDate.now();
 
 		TaskAddDAO dao = new TaskAddDAO();
 		try {
@@ -56,10 +60,12 @@ public class TaskAddServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		// リクエストスコープへの属性の設定
+		// セッションスコープへの属性の設定
 		session.setAttribute("categoryList", categoryList);
 		session.setAttribute("statusList", statusList);
 		session.setAttribute("userList", userList);
+		// リクエストスコープへの属性の設定
+		request.setAttribute("localDate", localDate);
 
 		// 商品登録画面への転送
 		RequestDispatcher rd = request.getRequestDispatcher("task-register.jsp");
@@ -84,8 +90,8 @@ public class TaskAddServlet extends HttpServlet {
 		
 		taskList.setTaskName(request.getParameter("task_name"));
 		taskList.setCategoryId(Integer.parseInt(request.getParameter("category_id")));
-		if(!request.getParameter("date").isEmpty()) {
-			taskList.setLimitDate(Date.valueOf(request.getParameter("date")));
+		if(!request.getParameter("limit_date").isEmpty()) {
+			taskList.setLimitDate(Date.valueOf(request.getParameter("limit_date")));
 		}
 		taskList.setUserId(request.getParameter("user_id"));
 		taskList.setStatusCode(request.getParameter("status_code"));
