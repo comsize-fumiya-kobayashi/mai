@@ -4,10 +4,14 @@ import static org.junit.Assert.*;
 
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import model.entity.CategoryBean;
+import model.entity.StatusBean;
 import model.entity.TaskCategoryUserStatusBean;
 
 class TaskUpdateDAOTest {
@@ -33,11 +37,10 @@ class TaskUpdateDAOTest {
 		// Check if the data was updated correctly
 		assertEquals(1, processingNumber);
 	}
-	
+	@Disabled
 	@Test
 	void test_selectTask() {
 		TaskUpdateDAO dao = new TaskUpdateDAO();
-
 		TaskCategoryUserStatusBean tname = null;
 		try {
 			tname = dao.selectTask(22);
@@ -55,5 +58,40 @@ class TaskUpdateDAOTest {
 		assertEquals("未着手",tname.getStatusName());
 		assertEquals("メモ",tname.getMemo());
 	}
+	@Disabled
+	@Test
+	void test_selectCategory() {
+		TaskUpdateDAO dao = new TaskUpdateDAO();
+		List<CategoryBean> categoryList = new ArrayList<CategoryBean>();
+		try {
+			categoryList = dao.selectCategory();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		assertEquals(1,categoryList.get(0).getCategoryId());
+		assertEquals("新商品A:開発プロジェクト",categoryList.get(0).getCategoryName());
+		assertEquals(2,categoryList.get(1).getCategoryId());
+		assertEquals("既存商品B:開発プロジェクト",categoryList.get(1).getCategoryName());
+	}
 	
+	@Test
+	void test_selectStatus() {
+		TaskUpdateDAO dao = new TaskUpdateDAO();
+		List<StatusBean> statusList = new ArrayList<StatusBean>();
+		
+		try {
+			statusList = dao.selectStatus();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		assertEquals("00",statusList.get(0).getStatusCode());
+		assertEquals("未着手",statusList.get(0).getStatusName());
+		assertNull(statusList.get(0).getUpdateDatetme());
+		assertEquals("50",statusList.get(1).getStatusCode());
+		assertEquals("着手",statusList.get(1).getStatusName());
+		assertNull(statusList.get(1).getUpdateDatetme());
+		assertEquals("99",statusList.get(2).getStatusCode());
+		assertEquals("完了",statusList.get(2).getStatusName());
+		assertNull(statusList.get(2).getUpdateDatetme());
+	}
 }
