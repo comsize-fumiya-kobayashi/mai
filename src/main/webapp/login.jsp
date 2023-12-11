@@ -4,41 +4,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<style>
-h2 {
-	color: red;
-}
-th {
-	text-align: left;
-}
-</style>
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <title>ログイン画面</title>
 </head>
 <body>
-	<h1>ログイン画面</h1>
+	<h1 class="text text-primary">ログイン画面</h1>
 	<hr>
 	<%
 	String message = null;
 	message = (String)request.getAttribute("message");
 	if(message != null){
 	%>
-		<h2><%= message %></h2>
+		<h5 class="alert alert-danger" role="alert">
+			<%= message %>
+		</h5>
 	<%
 	}
 	%>
 	<form action="login-servlet" method="post">
 	<table>
 		<tr>
-			<th>ユーザID:</th>
-			<td><input type="text" name="user_id" required="required"></td>
+			<th class="text-left">ユーザID:</th>
+			<td><input type="text" name="user_id" required></td>
 		</tr>
 		<tr>
-			<th>パスワード:</th>
-			<td><input type="password" name="password" required="required"></td>
+			<th class="text-left">パスワード:</th>
+			<td><input type="password" name="password" required></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="ログイン" class="btn btn-primary"></td>
+			<td><input type="reset" value="クリア" class="btn btn-outline-dark"></td>
 		</tr>
 	</table>
-	<input type="submit" value="ログイン">
-	<input type="reset" value="クリア">
 	</form>
 </body>
 </html>
