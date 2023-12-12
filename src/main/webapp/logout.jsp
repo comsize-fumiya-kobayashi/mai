@@ -4,16 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <title>ログアウト画面</title>
 </head>
 <body>
-	<h1>ログアウト画面</h1>
+	<br>
+	<h1 class="text text-primary">ログアウト画面</h1>
 	<hr>
 	<%= session.getAttribute("userName") %>さん
 	<% session.invalidate(); %>
-	<h1>ログアウトしました。</h1>
+	<h5 class="alert alert-success" role="alert">ログアウトしました。</h5>
 	<form action="login.jsp" method="post">
-		<input type="submit" value="ログイン画面へ">
+		<input type="submit" value="ログイン画面へ" class="btn btn-primary">
 	</form>
 </body>
 </html>
