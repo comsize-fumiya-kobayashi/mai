@@ -32,8 +32,11 @@
 			<td><input type="password" name="password" required></td>
 		</tr>
 		<tr>
+			<th>　</th>
+		</tr>
+		<tr>
 			<td><input type="submit" value="ログイン" class="btn btn-primary"></td>
-			<td><input type="reset" value="クリア" class="btn btn-outline-dark"></td>
+			<td><input type="reset" value="クリア" class="btn btn-secondary"></td>
 		</tr>
 	</table>
 	</form>
