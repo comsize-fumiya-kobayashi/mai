@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>ログイン画面</title>
 </head>
-<body class="mx-auto" style="width: 75%;">
+<body class="mx-auto">
 	<br>
 	<h1 class="text-primary text-center">ログイン画面</h1>
 	<hr>
@@ -16,7 +16,7 @@
 	message = (String)request.getAttribute("message");
 	if(message != null){
 	%>
-		<h5 class="alert alert-danger text-center" role="alert">
+		<h5 class="alert alert-danger mx-auto text-center" role="alert" style="width: 50%;">
 			<%= message %>
 		</h5>
 	<%
@@ -25,11 +25,11 @@
 	<form action="login-servlet" method="post">
 	<table class="mx-auto">
 		<tr>
-			<th class="text-left">ユーザID：</th>
+			<th>ユーザID：</th>
 			<td><input type="text" name="user_id" size="50px" required></td>
 		</tr>
 		<tr>
-			<th class="text-left">パスワード：</th>
+			<th>パスワード：</th>
 			<td><input type="password" name="password" size="50px" required></td>
 		</tr>
 		<tr>
