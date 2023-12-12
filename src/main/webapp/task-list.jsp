@@ -4,20 +4,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <title>タスク一覧</title>
+<style>
+
+th {
+	text-align: left;
+}
+</style>
 </head>
 <body>
 	<%
 		List<TaskCategoryUserStatusBean> taskList = (List<TaskCategoryUserStatusBean>) request.getAttribute("taskList");
 	%>
-	<h1>タスク一覧</h1>
+	<br>
+	<h1 class="text text-primary">タスク一覧</h1>
 	<hr>
 		<form action="menu.jsp" method="POST">
-		<input type="submit" value="メニュー画面へ">
+		<input class="btn btn-primary" type="submit" value="メニュー画面へ">
 		</form>
 		<br>
 
-	<table border="1">
+	<table class="table table-primary table-striped">
 		<tr>
 			<th>タスク名</th>
 			<th>カテゴリ情報</th>
@@ -47,19 +55,20 @@
 			<td>
 			<form action="task-update-servlet" method="GET">
 				<input type = "hidden" value="<%=task.getTaskId() %>" name="task_id">
-				<input type="submit" value="編集">
+				<input class="btn btn-primary" type="submit" value="編集">
 			</form>
 			</td>
 			<td>
 			<form action="task-delete-servlet" method="GET">
 				<input type = "hidden" value="<%=task.getTaskId() %>" name="task_id">
-			<input type="submit" value="削除">
+			<input class="btn btn-primary" type="submit" value="削除">
 			</form>
 			</td>
 		</tr>
 		<%
 		}
 		%>
+		</div>
 	</table>
 
 </body>

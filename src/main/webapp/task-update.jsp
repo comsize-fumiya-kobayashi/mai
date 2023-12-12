@@ -5,10 +5,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style>
+h1 {
+	color: red;
+}
+th {
+	text-align: left;
+}
+</style>
 <title>タスク編集画面</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
+<br>
+	<div style="width:280px; background-color:#98fb98;">
 	<h1>タスク編集画面</h1>
+	</div>
 	<hr>
 	<%
 	TaskCategoryUserStatusBean taskDetail = (TaskCategoryUserStatusBean) session.getAttribute("updateTask");
@@ -21,7 +33,7 @@
 
 	<form action="task-update-servlet" method="POST">
 				
-	
+<div style="width:300px; background-color:#fff0f5;">
 		<table border="1">
 			<tr>
 				<th>タスク名</th>
@@ -104,13 +116,14 @@
 
 			</tr>
 		</table>
+		</div>
 		<br>
 		<input type ="hidden" value="<%=taskDetail.getTaskId() %>" name ="task_id">
-		<input type="submit" value="変更する">
+		<input  class="btn btn-primary" type="submit" value="変更する">
 	</form>
 	<br>
 	<form action="task-list-servlet" method="GET">
-		<input type="submit" value="タスク一覧画面へ">
+		<input  class="btn btn-primary" type="submit" value="タスク一覧画面へ">
 	</form>
 </body>
 </html>

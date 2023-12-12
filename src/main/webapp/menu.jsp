@@ -4,23 +4,30 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <title>メニュー画面</title>
+<style>
+th {
+	text-align: left;
+}
+</style>
 </head>
 <body>
-	<h1>メニュー画面</h1>
+<br>
+	<h1 class="text text-primary">メニュー画面</h1>
 	<hr>
 	ログインユーザ：<%= session.getAttribute("userName") %>さん
 	<br>
 	<form action="task-add-servlet" method="GET">
-		<input type="submit" value="タスク登録画面へ">
+		<input class="btn btn-primary" type="submit" value="タスク登録画面へ">
 	</form>
 	<br>
 	<form action="task-list-servlet" method="GET">
-		<input type="submit" value="タスク一覧表示画面へ">
+		<input class="btn btn-primary" type="submit" value="タスク一覧表示画面へ">
 	</form>
 	<br>
 	<form action="logout.jsp" method="POST">
-		<input type="submit" value="ログアウト">
+		<input class="btn btn-primary" type="submit" value="ログアウト">
 	</form>
 </body>
 </html>
