@@ -6,18 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <title>タスク登録画面</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
+<body class="mx-auto">
 	<%
 	List<CategoryBean> categoryList = (List<CategoryBean>) session.getAttribute("categoryList");
 	List<StatusBean> statusList = (List<StatusBean>) session.getAttribute("statusList");
 	List<UserBean> userList = (List<UserBean>) session.getAttribute("userList");
 	LocalDate localDate = (LocalDate) request.getAttribute("localDate");
 	%>
-	<h1>タスク登録画面</h1>
+	<br>
+	<h1 class="text text-primary text-center">タスク登録画面</h1>
 	<hr>
 	<form action="task-add-servlet" method="POST">
-		<table border="1">
+	
+		<table class="mx-auto table table-primary table-stripped" style="width:400px">
 			<tr>
 				<th>タスク名</th>
 				<td><input type="text" name="task_name" required></td>
@@ -74,13 +77,14 @@
 			</tr>
 		</table>
 		<br>
-			<input type="submit" value="登録実行">
-			<input type="reset" value="クリア">
+		<div class="text-center">
+			<input class="btn btn-success" type="submit" value="登録実行">
+			<input class="btn btn-secondary" type="reset" value="クリア">
+			</div>
 	</form>
 	<br>
-	<br>
-	<form action="menu.jsp" method="POST">
-		<input type="submit" value="メニュー画面へ">
+	<form action="menu.jsp" method="POST" class="text-center">
+		<input class="btn btn-primary" type="submit" value="メニュー画面へ">
 	</form>
 </body>
 </html>

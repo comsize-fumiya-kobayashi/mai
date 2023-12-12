@@ -4,15 +4,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style>
+th {
+	text-align: left;
+}
+</style>
 <title>タスク登録成功画面</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
-	<h1>タスク登録成功画面</h1>
+<body class="mx-auto text-center">
+	<br>
+	<h1 class="text text-primary">タスク登録成功画面</h1>
 	<hr>
-	<h1>情報の登録に成功しました。</h1>
-
+	<h1 class="text text-success">情報の登録に成功しました。</h1>
+	<br>
 	<form action="menu.jsp" method="POST">
-		<input type="submit" value="メニュー画面へ">
+		<input class="btn btn-primary"  type="submit" value="メニュー画面へ">
 	</form>
 </body>
 </html>

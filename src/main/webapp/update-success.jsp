@@ -3,18 +3,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+th {
+	text-align: left;
+}
+</style>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>タスク編集成功画面</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
+<body class="mx-auto">
 	
 	<%
 	TaskCategoryUserStatusBean taskDetail = (TaskCategoryUserStatusBean) request.getAttribute("updateTask");
-	
 	%>
-	<h1>タスク編集は完了しました。</h1>
-	<hr>			
-	<table border="1">
+	<br>
+	<h1 class="text text-primary text-center">タスク編集成功画面</h1>
+	<hr>
+	<h1 class="text text-success text-center">情報の編集に成功しました。</h1>
+	<table class="mx-auto table table-primary table-striped" style="width:400px;">
 		<tr>
 			<th>タスク名</th>
 			<td><%=taskDetail.getTaskName()%></td>
@@ -48,9 +55,8 @@
 			<td><%=taskDetail.getMemo()%></td>
 		</tr>
 	</table>
-	<br>
-	<form action="menu.jsp" method="POST">
-		<input type="submit" value="メニュー画面へ">
+	<form action="menu.jsp" method="POST" class="text-center">
+		<input class="btn btn-primary" type="submit" value="メニュー画面へ">
 	</form>
 	<br>
 </body>

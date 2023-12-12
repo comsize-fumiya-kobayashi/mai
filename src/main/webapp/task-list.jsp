@@ -6,24 +6,18 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>タスク一覧</title>
-<style>
-
-th {
-	text-align: left;
-}
-</style>
 </head>
-<body>
+<body class="mx-auto">
 	<%
 		List<TaskCategoryUserStatusBean> taskList = (List<TaskCategoryUserStatusBean>) request.getAttribute("taskList");
 	%>
 	<br>
-	<h1 class="text text-primary">タスク一覧</h1>
+	<h1 class="text text-primary text-center">タスク一覧</h1>
 	<hr>
-		<form action="menu.jsp" method="POST">
+	<form action="menu.jsp" method="POST" class="text text-right">
 		<input class="btn btn-primary" type="submit" value="メニュー画面へ">
-		</form>
-		<br>
+	</form>
+	<br>
 
 	<table class="table table-primary table-striped">
 		<tr>

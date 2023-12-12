@@ -5,22 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<style>
-h1 {
-	color: red;
-}
-th {
-	text-align: left;
-}
-</style>
 <title>タスク編集画面</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
-<br>
-	<div style="width:280px; background-color:#98fb98;">
-	<h1>タスク編集画面</h1>
-	</div>
+<body class="mx-auto">
+	<br>
+	<h1 class="text text-primary text-center">タスク編集画面</h1>
 	<hr>
 	<%
 	TaskCategoryUserStatusBean taskDetail = (TaskCategoryUserStatusBean) session.getAttribute("updateTask");
@@ -33,8 +23,7 @@ th {
 
 	<form action="task-update-servlet" method="POST">
 				
-<div style="width:300px; background-color:#fff0f5;">
-		<table border="1">
+		<table class="mx-auto table table-primary table-striped" style="width:400px;">
 			<tr>
 				<th>タスク名</th>
 				<td><input type="text" value="<%=taskDetail.getTaskName()%>"
@@ -116,15 +105,14 @@ th {
 
 			</tr>
 		</table>
-		</div>
-		<br>
+		<div class="text-center">
 		<input type ="hidden" value="<%=taskDetail.getTaskId() %>" name ="task_id">
-		<input  class="btn btn-primary" type="submit" value="変更する">
+		<input  class="btn btn-success" type="submit" value="変更する">
+		</div>
 	</form>
 	<br>
-	<form action="task-list-servlet" method="GET">
+	<form action="task-list-servlet" method="GET" class="text-center">
 		<input  class="btn btn-primary" type="submit" value="タスク一覧画面へ">
 	</form>
 </body>
 </html>
-

@@ -6,21 +6,19 @@
 <head>
 <meta charset="UTF-8">
 <title>タスク削除確認画面</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
+<body class="mx-auto">
 	<%
 		TaskCategoryUserStatusBean deleteDetail = (TaskCategoryUserStatusBean) session.getAttribute("deleteTask");
-	
 	%>
-
-	<h1>タスク削除確認画面</h1>
-	<hr>
-	<h2>タスクを削除します。よろしいですか？</h2>
 	<br>
-	
-		<form action="task-delete-servlet" method="POST">
-	
-		<table border="1">
+	<h1 class="text text-primary text-center">タスク削除確認画面</h1>
+	<hr>
+	<h2 class="text text-danger text-center">タスクを削除します。よろしいですか？</h2>
+	<br>
+	<form action="task-delete-servlet" method="POST">
+		<table class="mx-auto table table-primary table-striped" style="width:400px;">
 			
 			<tr>
 				<th>タスク名</th>
@@ -55,14 +53,14 @@
 				<td><%=deleteDetail.getMemo()%></td>
 			</tr>
 		</table>
-	<br>
-	
+	<div class="text-center">
 		<input type ="hidden" value="<%=deleteDetail.getTaskId() %>" name ="task_id">
-		<input type="submit" value="削除する">
+		<input class="btn btn-danger"  type="submit" value="削除する">
+		</div>
 	</form>
 	<br>
-	<form action="task-list-servlet" method="GET">
-		<input type="submit" value="タスク一覧画面へ">
+	<form action="task-list-servlet" method="GET" class="text-center">
+		<input class="btn btn-secondary" type="submit" value="タスク一覧画面へ">
 	</form>
 </body>
 </html>
