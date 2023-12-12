@@ -8,6 +8,7 @@
 <title>ログイン画面</title>
 </head>
 <body>
+	<br>
 	<h1 class="text text-primary">ログイン画面</h1>
 	<hr>
 	<%
