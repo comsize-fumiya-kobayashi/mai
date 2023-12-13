@@ -8,17 +8,17 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body class="mx-auto">
-<%
-	TaskCategoryUserStatusBean taskDetail = (TaskCategoryUserStatusBean) request.getAttribute("updateTask");
-	
+	<%
+	TaskCategoryUserStatusBean taskDetail = (TaskCategoryUserStatusBean) request.getAttribute("updateTask");	
 	%>
 	<br>
 	<h1 class="text text-primary text-center">タスク編集失敗画面</h1>
 	<hr>
-	<h1 class="text text-danger text-center">情報の登録に失敗しました。</h1>
+	<h2 class="text text-danger text-center">情報の編集に失敗しました。</h2>
+	<br>
 	<table class="mx-auto table table-primary table-striped table-bordered" style="width:800px;">
 		<tr>
-			<th>タスク名</th>
+			<th style="width:15%;">タスク名</th>
 			<td><%=taskDetail.getTaskName()%></td>
 		</tr>
 		<tr>
@@ -36,7 +36,7 @@
 			}
 			%>
 			</td>
-				</tr>
+		</tr>
 		<tr>
 			<th>担当情報</th>
 			<td><%=taskDetail.getUserName()%></td>
@@ -52,7 +52,6 @@
 	</table>
 	<form action="task-list-servlet" method="POST" class="text-center">
 		<input class="btn btn-primary" type="submit" value="タスク一覧画面へ">
-		
 	</form>
 </body>
 </html>

@@ -13,14 +13,14 @@ th {
 <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body class="mx-auto">
-	
 	<%
 	TaskCategoryUserStatusBean taskDetail = (TaskCategoryUserStatusBean) request.getAttribute("updateTask");
 	%>
 	<br>
 	<h1 class="text text-primary text-center">タスク編集成功画面</h1>
 	<hr>
-	<h1 class="text text-success text-center">情報の編集に成功しました。</h1>
+	<h2 class="text text-success text-center">情報の編集に成功しました。</h2>
+	<br>
 	<table class="mx-auto table table-primary table-striped table-bordered" style="width:400px;">
 		<tr>
 			<th>タスク名</th>

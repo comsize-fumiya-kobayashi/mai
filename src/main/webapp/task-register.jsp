@@ -19,68 +19,62 @@
 	<h1 class="text text-primary text-center">タスク登録画面</h1>
 	<hr>
 	<form action="task-add-servlet" method="POST">
-	
-		<table class="mx-auto table table-primary table-striped" style="width:400px">
+		<table class="mx-auto table table-primary table-striped" style="width: 400px">
 			<tr>
 				<th>タスク名</th>
 				<td><input type="text" name="task_name" required></td>
 			</tr>
 			<tr>
 				<th>カテゴリ情報</th>
-				<td>
-					<select name="category_id">
-						<%
-						for (CategoryBean category : categoryList) {
-						%>
-							<option value="<%=category.getCategoryId()%>"><%=category.getCategoryName()%></option>
-						<%
-						}
-						%>
-					</select>
-				</td>
+				<td><select name="category_id">
+					<%
+					for (CategoryBean category : categoryList) {
+					%>
+					<option value="<%=category.getCategoryId()%>">
+						<%=category.getCategoryName()%>
+					</option>
+					<%
+					}
+					%>
+				</select></td>
 			</tr>
 			<tr>
 				<th>期限</th>
-				<td><input type="date" name="limit_date" min="<%=localDate %>"></td>
+				<td><input type="date" name="limit_date" min="<%=localDate%>"></td>
 			</tr>
 			<tr>
 				<th>担当者情報</th>
-				<td>
-					<select name="user_id">
-						<%
-						for (UserBean user : userList) {
-						%>
-							<option value="<%=user.getUserId()%>"><%=user.getUserName()%></option>
-						<%
-						}
-						%>
-					</select>
-				</td>
+				<td><select name="user_id">
+					<%
+					for (UserBean user : userList) {
+					%>
+						<option value="<%=user.getUserId()%>"><%=user.getUserName()%></option>
+					<%
+					}
+					%>
+				</select></td>
 			</tr>
 			<tr>
 				<th>ステータス情報</th>
-				<td>
-					<select name="status_code">
-						<%
-						for (StatusBean status : statusList) {
-						%>
-							<option value="<%=status.getStatusCode()%>"><%=status.getStatusName()%></option>
-						<%
-						}
-						%>
-					</select>
-				</td>
+				<td><select name="status_code">
+					<%
+					for (StatusBean status : statusList) {
+					%>
+						<option value="<%=status.getStatusCode()%>"><%=status.getStatusName()%></option>
+					<%
+					}
+					%>
+				</select></td>
 			</tr>
 			<tr>
 				<th>メモ</th>
 				<td><input type="text" name="memo"></td>
 			</tr>
 		</table>
-		<br>
 		<div class="text-center">
 			<input class="btn btn-success" type="submit" value="登録実行">
 			<input class="btn btn-secondary" type="reset" value="クリア">
-			</div>
+		</div>
 	</form>
 	<br>
 	<form action="menu.jsp" method="POST" class="text-center">

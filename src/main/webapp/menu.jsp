@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +8,10 @@
 <title>メニュー画面</title>
 </head>
 <body class="mx-auto text-center">
-<br>
+	<br>
 	<h1 class="text text-primary">メニュー画面</h1>
 	<hr>
-	ログインユーザ：<%= session.getAttribute("userName") %>さん
+	ログインユーザ：<%=session.getAttribute("userName")%>さん
 	<br>
 	<br>
 	<form action="task-add-servlet" method="GET">

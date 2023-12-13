@@ -11,7 +11,7 @@
 	<br>
 	<h1 class="text text-primary">タスク登録失敗画面</h1>
 	<hr>
-	<h1 class="text text-danger">情報の登録に失敗しました。</h1>
+	<h2 class="text text-danger">情報の登録に失敗しました。</h2>
 	<br>
 	<form action="task-add-servlet" method="GET">
 		<input class="btn btn-info" type="submit" value="登録画面へ">

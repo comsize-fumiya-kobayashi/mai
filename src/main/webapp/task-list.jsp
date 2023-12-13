@@ -9,7 +9,7 @@
 </head>
 <body class="mx-auto">
 	<%
-		List<TaskCategoryUserStatusBean> taskList = (List<TaskCategoryUserStatusBean>) request.getAttribute("taskList");
+	List<TaskCategoryUserStatusBean> taskList = (List<TaskCategoryUserStatusBean>) request.getAttribute("taskList");
 	%>
 	<br>
 	<h1 class="text text-primary text-center">タスク一覧</h1>
@@ -18,7 +18,6 @@
 		<input class="btn btn-primary align-right" type="submit" value="メニュー画面へ">
 	</form>
 	<br>
-
 	<table class="mx-auto table table-primary table-striped table-bordered" style="width:95%;">
 		<tr>
 			<th>タスク名</th>
@@ -31,39 +30,43 @@
 			<th>削除</th>
 		</tr>
 		<%
-				for (TaskCategoryUserStatusBean task : taskList) {
+		for (TaskCategoryUserStatusBean task : taskList) {
 		%>
 		<tr>
 			<td><%=task.getTaskName()%></td>
 			<td><%=task.getCategoryName()%></td>
 			<td>
-			<% if ((task.getLimitDate()) == null) { %>
-			<%= "" %>
-			<% } else { %>
-			<%= task.getLimitDate() %>
-			<% } %>
+				<%
+				if ((task.getLimitDate()) == null) {
+				%>
+					<%= "" %>
+				<%
+				} else {
+				%>
+					<%= task.getLimitDate() %>
+				<%
+				}
+				%>
 			</td>
 			<td><%=task.getUserName()%></td>
 			<td><%=task.getStatusName()%></td>
 			<td><%=task.getMemo()%></td>
 			<td>
-			<form action="task-update-servlet" method="GET">
-				<input type = "hidden" value="<%=task.getTaskId() %>" name="task_id">
-				<input class="btn btn-primary" type="submit" value="編集">
-			</form>
+				<form action="task-update-servlet" method="GET">
+					<input type = "hidden" value="<%=task.getTaskId() %>" name="task_id">
+					<input class="btn btn-success" type="submit" value="編集">
+				</form>
 			</td>
 			<td>
-			<form action="task-delete-servlet" method="GET">
-				<input type = "hidden" value="<%=task.getTaskId() %>" name="task_id">
-			<input class="btn btn-primary" type="submit" value="削除">
-			</form>
+				<form action="task-delete-servlet" method="GET">
+					<input type = "hidden" value="<%=task.getTaskId() %>" name="task_id">
+					<input class="btn btn-danger" type="submit" value="削除">
+				</form>
 			</td>
 		</tr>
 		<%
 		}
 		%>
-		</div>
 	</table>
-
 </body>
 </html>

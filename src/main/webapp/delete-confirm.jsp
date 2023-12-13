@@ -10,7 +10,7 @@
 </head>
 <body class="mx-auto">
 	<%
-		TaskCategoryUserStatusBean deleteDetail = (TaskCategoryUserStatusBean) session.getAttribute("deleteTask");
+	TaskCategoryUserStatusBean deleteDetail = (TaskCategoryUserStatusBean) session.getAttribute("deleteTask");
 	%>
 	<br>
 	<h1 class="text text-primary text-center">タスク削除確認画面</h1>
@@ -18,8 +18,7 @@
 	<h2 class="text text-danger text-center">タスクを削除します。よろしいですか？</h2>
 	<br>
 	<form action="task-delete-servlet" method="POST">
-		<table class="mx-auto table table-primary table-striped table-bordered" style="width:400px;">
-			
+		<table class="mx-auto table table-primary table-striped table-bordered" style="width:400px;">	
 			<tr>
 				<th>タスク名</th>
 				<td><%=deleteDetail.getTaskName()%></td>
@@ -56,7 +55,7 @@
 	<div class="text-center">
 		<input type ="hidden" value="<%=deleteDetail.getTaskId() %>" name ="task_id">
 		<input class="btn btn-danger"  type="submit" value="削除する">
-		</div>
+	</div>
 	</form>
 	<br>
 	<form action="task-list-servlet" method="GET" class="text-center">
