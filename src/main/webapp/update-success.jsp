@@ -21,7 +21,7 @@ th {
 	<h1 class="text text-primary text-center">タスク編集成功画面</h1>
 	<hr>
 	<h1 class="text text-success text-center">情報の編集に成功しました。</h1>
-	<table class="mx-auto table table-primary table-striped" style="width:400px;">
+	<table class="mx-auto table table-primary table-striped table-bordered" style="width:400px;">
 		<tr>
 			<th>タスク名</th>
 			<td><%=taskDetail.getTaskName()%></td>

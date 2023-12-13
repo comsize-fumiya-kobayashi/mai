@@ -25,7 +25,7 @@
 		}
 	%>
 	<br>
-	<table class="mx-auto table table-primary table-striped" style="width:400px;">
+	<table class="mx-auto table table-primary table-striped table-bordered" style="width:400px;">
 		<tr>
 			<th>タスク名</th>
 			<td><%=taskResult.getTaskName()%></td>

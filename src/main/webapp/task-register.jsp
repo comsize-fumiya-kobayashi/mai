@@ -20,7 +20,7 @@
 	<hr>
 	<form action="task-add-servlet" method="POST">
 	
-		<table class="mx-auto table table-primary table-stripped" style="width:400px">
+		<table class="mx-auto table table-primary table-striped" style="width:400px">
 			<tr>
 				<th>タスク名</th>
 				<td><input type="text" name="task_name" required></td>

@@ -16,7 +16,7 @@
 	<h1 class="text text-primary text-center">タスク編集失敗画面</h1>
 	<hr>
 	<h1 class="text text-danger text-center">情報の登録に失敗しました。</h1>
-	<table class="mx-auto table table-primary table-striped" style="width:800px;">
+	<table class="mx-auto table table-primary table-striped table-bordered" style="width:800px;">
 		<tr>
 			<th>タスク名</th>
 			<td><%=taskDetail.getTaskName()%></td>

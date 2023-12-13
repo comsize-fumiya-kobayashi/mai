@@ -14,12 +14,12 @@
 	<br>
 	<h1 class="text text-primary text-center">タスク一覧</h1>
 	<hr>
-	<form action="menu.jsp" method="POST" class="text text-right">
-		<input class="btn btn-primary" type="submit" value="メニュー画面へ">
+	<form action="menu.jsp" method="POST" style="margin-left:1150px;">
+		<input class="btn btn-primary align-right" type="submit" value="メニュー画面へ">
 	</form>
 	<br>
 
-	<table class="table table-primary table-striped">
+	<table class="mx-auto table table-primary table-striped table-bordered" style="width:95%;">
 		<tr>
 			<th>タスク名</th>
 			<th>カテゴリ情報</th>

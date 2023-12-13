@@ -11,6 +11,7 @@
 	<br>
 	<h1 class="text-primary text-center">ログイン画面</h1>
 	<hr>
+	<br>
 	<%
 	String message = null;
 	message = (String)request.getAttribute("message");
@@ -22,26 +23,15 @@
 	<%
 	}
 	%>
-	<form action="login-servlet" method="post">
-	<table class="mx-auto">
-		<tr>
-			<th>ユーザID：</th>
-			<td><input type="text" name="user_id" size="50px" required></td>
-		</tr>
-		<tr>
-			<th>パスワード：</th>
-			<td><input type="password" name="password" size="50px" required></td>
-		</tr>
-		<tr>
-			<th>　</th>
-		</tr>
-		<tr>
-			<td colspan="2" class="text-center">
-				<input type="submit" value="ログイン" class="btn btn-primary">
-				<input type="reset" value="クリア" class="btn btn-secondary">
-			</td>
-		</tr>
-	</table>
+	<form action="login-servlet" method="post" class="text-center">
+	ユーザID：<input type="text" name="user_id" size="50px" required>
+	<br>
+	<br>
+	パスワード：<input type="password" name="password" size="50px" required>
+	<br>
+	<br>
+	<input type="submit" value="ログイン" class="btn btn-primary">
+	<input type="reset" value="クリア" class="btn btn-secondary">
 	</form>
 </body>
 </html>
