@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>ログイン画面</title>
 </head>
-<body class="mx-auto">
+<body class="mx-auto bg-success p-2 text-dark bg-opacity-50">
 	<br>
 	<h1 class="text-primary text-center">ログイン画面</h1>
 	<hr>
@@ -23,7 +23,7 @@
 	<%
 	}
 	%>
-	<form action="login-servlet" method="post">
+	<form action="login-servlet" method="post" class="mx-auto pt-5 pb-5 bg-success-subtle" style="width: 30%;">
 	<table class="mx-auto">
 		<tr>
 			<th><div class="mb-2">ユーザID：</div></th>
