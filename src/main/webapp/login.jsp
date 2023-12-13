@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>ログイン画面</title>
 </head>
-<body class="mx-auto bg-success p-2 text-dark bg-opacity-50">
+<body class="mx-auto">
 	<br>
 	<h1 class="text-primary text-center">ログイン画面</h1>
 	<hr>
