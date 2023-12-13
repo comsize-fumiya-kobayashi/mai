@@ -23,15 +23,22 @@
 	<%
 	}
 	%>
-	<form action="login-servlet" method="post" class="text-center">
-	ユーザID：<input type="text" name="user_id" size="50px" required>
+	<form action="login-servlet" method="post">
+	<table class="mx-auto">
+		<tr>
+			<th><div class="mb-2">ユーザID：</div></th>
+			<td><input type="text" name="user_id" size="35px" required class="mb-2"></td>
+		</tr>
+		<tr>
+			<th>パスワード：</th>
+			<td><input type="password" name="password" size="35px" required></td>
+		</tr>
+	</table>
 	<br>
-	<br>
-	パスワード：<input type="password" name="password" size="50px" required>
-	<br>
-	<br>
-	<input type="submit" value="ログイン" class="btn btn-primary">
-	<input type="reset" value="クリア" class="btn btn-secondary">
+	<div class="text-center">
+		<input type="submit" value="ログイン" class="btn btn-primary">
+		<input type="reset" value="クリア" class="btn btn-secondary">
+	</div>
 	</form>
 </body>
 </html>
