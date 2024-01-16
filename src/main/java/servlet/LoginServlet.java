@@ -72,6 +72,7 @@ public class LoginServlet extends HttpServlet {
 		// ログインユーザの有無判定
 		if (isExistUser) {
 			url = "menu.jsp";
+			session.setAttribute("userId", userId);
 			session.setAttribute("userName", userName);
 		} else {
 			url = "login.jsp";

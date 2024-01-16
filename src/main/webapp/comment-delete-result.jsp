@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="model.entity.TaskCategoryUserStatusBean"%>
+    pageEncoding="UTF-8" import="model.entity.CommentBean"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>タスク削除結果画面</title>
+<title>コメント削除結果画面</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body class="mx-auto">
 	<%
-	TaskCategoryUserStatusBean taskResult = (TaskCategoryUserStatusBean) session.getAttribute("deleteTask");
+	CommentBean commentResult = (CommentBean) session.getAttribute("selectComment");
 	int processingNumber = (Integer) request.getAttribute("processingNumber");
 	%>
 	<br>
-	<h1 class="text text-primary text-center">タスク削除結果画面</h1>
+	<h1 class="text text-primary text-center">コメント削除結果画面</h1>
 	<hr>
 	<%
 	if (processingNumber > 0) {
@@ -29,36 +29,30 @@
 	<br>
 	<table class="mx-auto table table-primary table-striped table-bordered" style="width:400px;">
 		<tr>
+			<th>タスクID</th>
+			<td><%=commentResult.getTaskId()%></td>
+		</tr>
+		<tr>
 			<th>タスク名</th>
-			<td><%=taskResult.getTaskName()%></td>
+			<td><%=commentResult.getTaskName()%></td>
 		</tr>
 		<tr>
-			<th>カテゴリ情報</th>
-			<td><%=taskResult.getCategoryName()%></td>
-		</tr>
-		<tr>
-			<th>期限</th>
+			<th>ユーザID</th>
 			<td>
-				<%
-				if(taskResult.getLimitDate() != null){
-				%>
-					<%=taskResult.getLimitDate()%>
-				<%
-				}
-				%>
+				<%=commentResult.getUserId()%>
 			</td>
 		</tr>
 		<tr>
-			<th>担当者情報</th>
-			<td><%=taskResult.getUserName() %></td>
+			<th>コメントID</th>
+			<td><%=commentResult.getCommentId() %></td>
 		</tr>
 		<tr>
-			<th>ステータス情報</th>
-			<td><%=taskResult.getStatusName()%></td>
+			<th>コメント</th>
+			<td><%=commentResult.getComment()%></td>
 		</tr>
 		<tr>
-			<th>メモ</th>
-			<td><%=taskResult.getMemo()%></td>
+			<th>投稿日</th>
+			<td><%=commentResult.getUpdateTime()%></td>
 		</tr>
 	</table>
 	<form action="menu.jsp" method="POST" class="text-center">

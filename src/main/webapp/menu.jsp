@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>メニュー画面</title>
 </head>
+
 <body class="mx-auto text-center">
 	<br>
 	<h1 class="text text-primary">メニュー画面</h1>

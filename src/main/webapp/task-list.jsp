@@ -27,6 +27,8 @@
 			<th>ステータス情報</th>
 			<th>メモ</th>
 			<th>編集</th>
+			<th>コメント投稿</th>
+			<th>コメント一覧</th>
 			<th>削除</th>
 		</tr>
 		<%
@@ -55,6 +57,18 @@
 				<form action="task-update-servlet" method="GET">
 					<input type = "hidden" value="<%=task.getTaskId() %>" name="task_id">
 					<input class="btn btn-success" type="submit" value="編集">
+				</form>
+			</td>
+			<td>
+				<form action="comment-contribution-servlet" method="GET">
+					<input type = "hidden" value="<%=task.getTaskId() %>" name="task_id">
+					<input class="btn btn-success" type="submit" value="投稿">
+				</form>
+			</td>
+			<td>
+				<form action="comment-list-servlet" method="GET">
+					<input type = "hidden" value="<%=task.getTaskId() %>" name="task_id">
+					<input class="btn btn-success" type="submit" value="一覧">
 				</form>
 			</td>
 			<td>
