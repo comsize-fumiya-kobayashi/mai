@@ -8,8 +8,19 @@ import java.sql.SQLException;
 
 import model.entity.CommentBean;
 
+/**
+ * コメントを削除するDAOクラス
+ * @author 鈴木
+ */
 public class CommentDeleteDAO {
 	
+	/**
+	 * 削除するコメントを検索するメソッド
+	 * @param commentId コメントID
+	 * @return コメント情報
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public CommentBean selectComment(int commentId) throws SQLException, ClassNotFoundException {
 		
 		String sql = "SELECT t1.task_id, t1.task_name, t2.user_id, t2.comment_id, t2.comment, t2.update_datetime "
@@ -44,6 +55,13 @@ public class CommentDeleteDAO {
 		return commentValue;
 	}
 	
+	/**
+	 * コメントを削除するメソッド
+	 * @param commentId コメントID
+	 * @return 処理件数
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public int deleteComment (int commentId) throws SQLException, ClassNotFoundException {
 
 		String sql = "DELETE FROM t_comment WHERE comment_id = ?";

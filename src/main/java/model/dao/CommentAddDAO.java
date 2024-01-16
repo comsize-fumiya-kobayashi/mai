@@ -8,8 +8,19 @@ import java.sql.SQLException;
 import model.entity.CommentBean;
 import model.entity.TaskCategoryUserStatusBean;
 
+/**
+ * コメントを追加するDAOクラス
+ * @author 鈴木
+ */
 public class CommentAddDAO {
 	
+	/**
+	 * コメントをするタスクの情報を検索するメソッド
+	 * @param taskId タスクID
+	 * @return タスク情報
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public TaskCategoryUserStatusBean taskSearch(int taskId) throws SQLException, ClassNotFoundException {
 		TaskCategoryUserStatusBean taskValue = new TaskCategoryUserStatusBean();
 		
@@ -49,7 +60,14 @@ public class CommentAddDAO {
 		return taskValue;
 	}
 	
-	public int addComment (CommentBean CommentValue) throws SQLException, ClassNotFoundException {
+	/**
+	 * コメントを追加するメソッド
+	 * @param commentValue コメント情報
+	 * @return 処理件数
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
+	public int addComment (CommentBean commentValue) throws SQLException, ClassNotFoundException {
 		int processingNumber = 0; //処理件数
 
 		String sql = "INSERT INTO t_comment(task_id,user_id,comment)VALUES(?,?,?)";
@@ -57,9 +75,9 @@ public class CommentAddDAO {
 		// データベースへの接続の取得、Statementの取得、SQLステートメントの実行
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
-			pstmt.setInt(1, CommentValue.getTaskId());
-			pstmt.setString(2, CommentValue.getUserId());
-			pstmt.setString(3, CommentValue.getComment());
+			pstmt.setInt(1, commentValue.getTaskId());
+			pstmt.setString(2, commentValue.getUserId());
+			pstmt.setString(3, commentValue.getComment());
 			processingNumber = pstmt.executeUpdate();
 		}
 		return processingNumber;

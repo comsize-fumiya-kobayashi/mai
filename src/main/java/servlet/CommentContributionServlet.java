@@ -18,6 +18,7 @@ import model.entity.TaskCategoryUserStatusBean;
 
 /**
  * Servlet implementation class CommentContributionServlet
+ * @author 鈴木
  */
 @WebServlet("/comment-contribution-servlet")
 public class CommentContributionServlet extends HttpServlet {

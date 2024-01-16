@@ -16,6 +16,7 @@ import model.entity.CommentBean;
 
 /**
  * Servlet implementation class CommentDeleteServlet
+ * @author 鈴木
  */
 @WebServlet("/comment-delete-servlet")
 public class CommentDeleteServlet extends HttpServlet {

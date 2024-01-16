@@ -11,8 +11,19 @@ import java.util.List;
 import model.entity.CommentBean;
 import model.entity.TaskCategoryUserStatusBean;
 
+/**
+ * コメントを一覧表示するDAOクラス
+ * @author 鈴木
+ */
 public class CommentListDAO {
 	
+	/**
+	 * 1つのタスクの全てのコメントを検索するメソッド
+	 * @param taskNum タスクID
+	 * @return 1つのタスクの全てのコメント情報
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public List<CommentBean> commentAll(int taskNum) throws SQLException, ClassNotFoundException {
 		
 		List<CommentBean> commentList = new ArrayList<CommentBean>();
@@ -55,6 +66,13 @@ public class CommentListDAO {
 		return commentList;
 	}
 	
+	/**
+	 * タスクの検索するメソッド
+	 * @param taskNum taskID
+	 * @return タスク情報
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public TaskCategoryUserStatusBean selectTask(int taskNum) throws SQLException, ClassNotFoundException {
 		
 		TaskCategoryUserStatusBean taskValue = new TaskCategoryUserStatusBean();
