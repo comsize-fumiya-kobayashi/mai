@@ -47,6 +47,8 @@ public class CommentListDAO {
 				String userId = res.getString("t2.user_id");
 				int commentId = res.getInt("t2.comment_id");
 				String comment = res.getString("t2.comment");
+				
+				//SQLから持ってきたデータの型DateからLocalDateに変換
 				LocalDate updateDate = res.getDate("t2.update_datetime").toLocalDate();
 				CommentBean commentValue = new CommentBean();
 				
@@ -84,15 +86,12 @@ public class CommentListDAO {
 				+ "LEFT JOIN m_category t2 ON t1.category_id = t2.category_id "
 				+ "LEFT JOIN m_user t3 ON t1.user_id = t3.user_id "
 				+ "LEFT JOIN m_status t4 ON t1.status_code = t4.status_code WHERE t1.task_id = ?";
-
 		
 		try (Connection con = ConnectionManager.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 				
 				pstmt.setInt(1,taskNum);
 				ResultSet res = pstmt.executeQuery();
-			
-			
 			
 			while (res.next()) {
 				taskValue.setTaskId(res.getInt("t1.task_id"));
