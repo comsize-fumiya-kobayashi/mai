@@ -50,7 +50,7 @@ public class CommentListServlet extends HttpServlet {
 		try {
 			// コメントテーブルからコメントの一覧情報を取得
 			commentList = dao.commentAll(taskNum);
-			//タスクテーブルから1つのダスク情報を取得
+			//タスクテーブルから1つのタスク情報を取得
 			taskData = dao.selectTask(taskNum);
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();

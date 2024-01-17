@@ -49,7 +49,7 @@ public class CommentDeleteDAO {
 				commentValue.setUserId(userId);
 				commentValue.setCommentId(commentNum);
 				commentValue.setComment(comment);
-				commentValue.setUpdateTime(updateDateTime);
+				commentValue.setUpdateTime(updateDateTime.toLocalDate());
 				}
 		}
 		return commentValue;

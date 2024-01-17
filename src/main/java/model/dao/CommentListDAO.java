@@ -1,10 +1,10 @@
 package model.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +47,7 @@ public class CommentListDAO {
 				String userId = res.getString("t2.user_id");
 				int commentId = res.getInt("t2.comment_id");
 				String comment = res.getString("t2.comment");
-				Date updateDateTime = res.getDate("t2.update_datetime");
+				LocalDate updateDate = res.getDate("t2.update_datetime").toLocalDate();
 				CommentBean commentValue = new CommentBean();
 				
 				commentValue.setTaskId(taskId);
@@ -55,7 +55,9 @@ public class CommentListDAO {
 				commentValue.setUserId(userId);
 				commentValue.setCommentId(commentId);
 				commentValue.setComment(comment);
-				commentValue.setUpdateTime(updateDateTime);
+				
+				
+				commentValue.setUpdateTime(updateDate);
 				
 				commentList.add(commentValue);
 				

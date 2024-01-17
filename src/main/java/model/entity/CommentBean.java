@@ -1,6 +1,6 @@
 package model.entity;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  * コメントBeanクラス
@@ -24,7 +24,7 @@ public class CommentBean {
 	private int commentId;
 	
 	/** 投稿日 */
-	private Date updateTime;
+	private LocalDate updateTime;
 	
 	public String getComment() {
 		return comment;
@@ -66,11 +66,11 @@ public class CommentBean {
 		this.commentId = commentId;
 	}
 	
-	public Date getUpdateTime() {
+	public LocalDate getUpdateTime() {
 		return updateTime;
 	}
 	
-	public void setUpdateTime(Date updateTime) {
+	public void setUpdateTime(LocalDate updateTime) {
 		this.updateTime = updateTime;
 	}
 	
