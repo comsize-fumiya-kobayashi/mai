@@ -16,10 +16,6 @@ public class Util {
 	/** 生成される鍵の長さ */
 	private static final int KEY_LENGTH = 256;
 
-	public static void main(String[] args) {
-		String password = getSafetyPassword("test2", "test2");
-		System.out.println(password);
-	}
 
 	/**
 	 *　平文のパスワードとソルトから安全なパスワードを生成し、返却します

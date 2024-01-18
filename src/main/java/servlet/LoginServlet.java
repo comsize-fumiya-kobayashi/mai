@@ -50,10 +50,8 @@ public class LoginServlet extends HttpServlet {
 		String userId = request.getParameter("user_id");
 		String password = request.getParameter("password");
 		
-		//ハッシュ化
-		Util util = new Util();
-		
-		password = util.getSafetyPassword(password, password);
+		//ソルトは基本ユーザIDを使用する
+		password = Util.getSafetyPassword(password, userId);
 		
 		// セッション
 		HttpSession session = request.getSession();
