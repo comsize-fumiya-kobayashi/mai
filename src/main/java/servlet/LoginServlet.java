@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import common.Util;
 import model.dao.UserDAO;
 
 /**
@@ -48,6 +49,11 @@ public class LoginServlet extends HttpServlet {
 		// 入力フォームのパラメータ値を代入
 		String userId = request.getParameter("user_id");
 		String password = request.getParameter("password");
+		
+		//ハッシュ化
+		Util util = new Util();
+		
+		password = util.getSafetyPassword(password, password);
 		
 		// セッション
 		HttpSession session = request.getSession();
